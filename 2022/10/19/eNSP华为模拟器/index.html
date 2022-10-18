@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="RpWn" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      eNSP华为模拟器 
+      
+      
+      |
+    
+     RpWn
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/2.png">
+    <link rel="icon" href="/images/2.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">𝙍𝙥𝙒𝙣</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">Categories</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">eNSP华为模拟器</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-10-19 00:04:30
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="eNSP学习笔记">
+                    <b>#</b> eNSP学习笔记
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/eNSP/" title="eNSP">
+                    #eNSP
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="eNSP（华为模拟器）"><a href="#eNSP（华为模拟器）" class="headerlink" title="eNSP（华为模拟器）"></a>eNSP（华为模拟器）</h1><h2 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h2><h3 id="manual"><a href="#manual" class="headerlink" title="manual"></a>manual</h3><blockquote>
+<p>优点</p>
+</blockquote>
+<ul>
+<li> 手工链路聚合，成员接口手工配置加入，没有LACP的参与。</li>
+<li> 当需要在两个直连设备间提供一个较大的链路带宽而设备又不支持LACP协议时，可以使用手工模式。</li>
+<li> 不同厂家之间无需担心协议报文协商问题。</li>
+</ul>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<ul>
+<li>当一条链路故障时，故障链路无法转发数据，链路聚合组自动在剩余的两条活动链路中分担流量。<br>手工模式Eth-Trunk可以完成多个物理接口聚合成一个Eth-Trunk口来提高带宽，同时能够检测到同一聚合组内的成员链路有断路等有限故障，<strong>但是无法检测到链路层故障、链路错连等故障</strong>。</li>
+<li><ul>
+<li> 单根纤芯发生故障时，可能出现收端正常的一方端口处于UP，而出现单通，所以这种情况一般要求端口匹配状态为自适应状态。<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<ul>
+<li>提高Eth-Trunk的容错性，并且能提供备份功能，保证成员链路的高可靠性</li>
+</ul>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<ul>
+<li>不同厂家对接可能因为协议报文的处理机制等不同，产生对接异常。</li>
+<li>而且一般来说：动态聚合要同端口匹配方式为强制相配套使用，因为：如果端口匹配方式为自适应，那么当物理链路质量不好时，可能端口状态频繁出现变化，相应的聚合组状态也会频繁出现up、down故障。</li>
+</ul>
+<blockquote>
+<p><strong>不同厂家对接，建议设置聚合组为静态、端口设置为自适应方式</strong></p>
+</blockquote>
+<h3 id="max-active-linknumber"><a href="#max-active-linknumber" class="headerlink" title="max active-linknumber"></a>max active-linknumber</h3><ul>
+<li>一般来说聚合的线路为三条就是选择<strong>max active-linknumber 2</strong>，这样即时有一条down了也可以即时补进去一条。还是为2条在工作</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="创建脚注格式类似这样-RUNOOB"><a href="#创建脚注格式类似这样-RUNOOB" class="headerlink" title="创建脚注格式类似这样 ^RUNOOB"></a>创建脚注格式类似这样 <a href="56465">^RUNOOB</a></h2><h3 id="stp-edged-port-enable-amp-disable"><a href="#stp-edged-port-enable-amp-disable" class="headerlink" title="stp edged-port enable &amp; disable"></a>stp edged-port enable &amp; disable</h3><ul>
+<li><p>stp edged-port enable 配置的接口不参与生成树计算，即可以转发BPDU也可以接收BPDU</p>
+</li>
+<li><p>:stp disable禁用STP/RSTP/MSTP功能，如果在链接客户端的接口上配置了此命令，这个接口禁用STP/RSTP/MSTP功能，即不参与生成树计算也不转发BPDU报文</p>
+</li>
+<li><p>定义：在 RSTP 里面，如果某一个指定端口位于整个网络的边缘，即不再与其他交换设备连接，而是直接与终端设备直连，这种端口叫做边缘端口。</p>
+</li>
+<li><p>特点</p>
+</li>
+</ul>
+<ul>
+<li>边缘端口的特性是端口up后可直接进入forwarding状态，而不需要等待转发延时，所以边缘端口连接的设备是终端设备，电脑，服务器等需要快速访问网络的设备。<ul>
+<li>场景1：在连接服务器，DHCP客户端，防火墙，打印机，路由器等终端设备可以使用边缘端口</li>
+<li>场景2：重要服务器，避免在网络发生拓扑变化时被阻塞，同时可以使其快速上线</li>
+<li>场景3：可以用于连接DHCP客户端，使其客户端快速获得IP地址</li>
+</ul>
+<ul>
+<li>场景4：在大型网络中，连接大量终端PC的交换机可以使用边缘端口，因为当PC开机时，连接PC的端口为DP会UP并进入转发状态，交换机会产生大量的TC BPDU，导致网络中的交换机频繁刷新自身的MAC地址表。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>一般来说开启stp enable为pc机接口上，应为它不需要参与生成树计算</p>
+</blockquote>
+<h3 id="Stp-cost-200000"><a href="#Stp-cost-200000" class="headerlink" title="Stp cost 200000"></a>Stp cost 200000</h3><ul>
+<li>stp cost 是生成树协议在选举根端口和指定端口时需要使用的一个重要参数。开销越小被选举为根端口或指定端口的可能性就越大。stp cost 100000这么大的开销值，这个端口基本上就是出于逻辑阻塞状态了，除非交换机上其他端口上的物理线路都断开了，这个才有可能进入到转发状态。</li>
+<li>说人话就是设置了这个他就是堵塞的，应为它的优先级很低，除非正常线路断开否则它不会启用。<h3 id="stp-bpdu-protection"><a href="#stp-bpdu-protection" class="headerlink" title="stp bpdu-protection"></a>stp bpdu-protection</h3></li>
+<li>需要配置在BR根端口，使用命令<code>display stp brief </code>查看Root状态是哪个，哪个就是根端口。</li>
+</ul>
+<blockquote>
+<p>root=根端口 alte=替代端口=alternative desi=指定端口=designation</p>
+</blockquote>
+<p>更新中….</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/09/18/%C2%96CTFshow%E5%8D%95%E8%BA%AB%E6%9D%AF%E7%AD%BE%E5%88%B0%E7%BB%84/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-10-19 00:04:30
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="eNSP学习笔记">
+                        <b>#</b> eNSP学习笔记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/eNSP/" title="eNSP">
+                        #eNSP
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#eNSP%EF%BC%88%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8%EF%BC%89"><span class="toc-text">eNSP（华为模拟器）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88"><span class="toc-text">链路聚合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#manual"><span class="toc-text">manual</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LACP%E6%A8%A1%E5%BC%8F%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88"><span class="toc-text">LACP模式链路聚合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-active-linknumber"><span class="toc-text">max active-linknumber</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%84%9A%E6%B3%A8%E6%A0%BC%E5%BC%8F%E7%B1%BB%E4%BC%BC%E8%BF%99%E6%A0%B7-RUNOOB"><span class="toc-text">创建脚注格式类似这样 ^RUNOOB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stp-edged-port-enable-amp-disable"><span class="toc-text">stp edged-port enable &amp; disable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stp-cost-200000"><span class="toc-text">Stp cost 200000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stp-bpdu-protection"><span class="toc-text">stp bpdu-protection</span></a></li></ol></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" href="">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2022 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+      
+          本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        
+      
+          本站访客数<span id="busuanzi_value_site_uv"></span>人
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8 + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F10%2F19%2FeNSP%25E5%258D%258E%25E4%25B8%25BA%25E6%25A8%25A1%25E6%258B%259F%25E5%2599%25A8%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(e){e.imageLazyLoadSetting.processImages=t;var n=e.imageLazyLoadSetting.isSPA,i=e.imageLazyLoadSetting.preloadRatio||1,r=o();function o(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){n&&(r=o());for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(e.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];e=function(){r=r.filter(function(t){return o!==t})},(t=o).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,t.removeAttribute("data-original"),e&&e()},t.src!==i&&(n.src=i))}()}function a(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",a),e.addEventListener("resize",a),e.addEventListener("orientationchange",a)}(this);</script></body>
+</html>

