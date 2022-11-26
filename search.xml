@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>eNSP笔记</title>
+      <link href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>关闭来自eNSP的命令反馈提示：</p><ul><li>undo terminal monitor </li><li>undo info-center enable</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> eNSP学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> eNSP </tag>
+            
+            <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>eNSP华为模拟器</title>
       <link href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
       <url>/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[<h1 id="eNSP（华为模拟器）"><a href="#eNSP（华为模拟器）" class="headerlink" title="eNSP（华为模拟器）"></a>eNSP（华为模拟器）</h1><h2 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h2><h3 id="manual"><a href="#manual" class="headerlink" title="manual"></a>manual</h3><blockquote><p>优点</p></blockquote><ul><li> 手工链路聚合，成员接口手工配置加入，没有LACP的参与。</li><li> 当需要在两个直连设备间提供一个较大的链路带宽而设备又不支持LACP协议时，可以使用手工模式。</li><li> 不同厂家之间无需担心协议报文协商问题。</li></ul><blockquote><p>缺点</p></blockquote><ul><li>当一条链路故障时，故障链路无法转发数据，链路聚合组自动在剩余的两条活动链路中分担流量。<br>手工模式Eth-Trunk可以完成多个物理接口聚合成一个Eth-Trunk口来提高带宽，同时能够检测到同一聚合组内的成员链路有断路等有限故障，<strong>但是无法检测到链路层故障、链路错连等故障</strong>。</li><li><ul><li> 单根纤芯发生故障时，可能出现收端正常的一方端口处于UP，而出现单通，所以这种情况一般要求端口匹配状态为自适应状态。<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3></li></ul></li></ul><blockquote><p>优点</p></blockquote><ul><li>提高Eth-Trunk的容错性，并且能提供备份功能，保证成员链路的高可靠性</li></ul><blockquote><p>缺点</p></blockquote><ul><li>不同厂家对接可能因为协议报文的处理机制等不同，产生对接异常。</li><li>而且一般来说：动态聚合要同端口匹配方式为强制相配套使用，因为：如果端口匹配方式为自适应，那么当物理链路质量不好时，可能端口状态频繁出现变化，相应的聚合组状态也会频繁出现up、down故障。</li></ul><blockquote><p><strong>不同厂家对接，建议设置聚合组为静态、端口设置为自适应方式</strong></p></blockquote><h3 id="max-active-linknumber"><a href="#max-active-linknumber" class="headerlink" title="max active-linknumber"></a>max active-linknumber</h3><ul><li>一般来说聚合的线路为三条就是选择<strong>max active-linknumber 2</strong>，这样即时有一条down了也可以即时补进去一条。还是为2条在工作</li></ul><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="创建脚注格式类似这样-RUNOOB"><a href="#创建脚注格式类似这样-RUNOOB" class="headerlink" title="创建脚注格式类似这样 ^RUNOOB"></a>创建脚注格式类似这样 <a href="56465">^RUNOOB</a></h2><h3 id="stp-edged-port-enable-amp-disable"><a href="#stp-edged-port-enable-amp-disable" class="headerlink" title="stp edged-port enable &amp; disable"></a>stp edged-port enable &amp; disable</h3><ul><li><p>stp edged-port enable 配置的接口不参与生成树计算，即可以转发BPDU也可以接收BPDU</p></li><li><p>:stp disable禁用STP/RSTP/MSTP功能，如果在链接客户端的接口上配置了此命令，这个接口禁用STP/RSTP/MSTP功能，即不参与生成树计算也不转发BPDU报文</p></li><li><p>定义：在 RSTP 里面，如果某一个指定端口位于整个网络的边缘，即不再与其他交换设备连接，而是直接与终端设备直连，这种端口叫做边缘端口。</p></li><li><p>特点</p></li></ul><ul><li>边缘端口的特性是端口up后可直接进入forwarding状态，而不需要等待转发延时，所以边缘端口连接的设备是终端设备，电脑，服务器等需要快速访问网络的设备。<ul><li>场景1：在连接服务器，DHCP客户端，防火墙，打印机，路由器等终端设备可以使用边缘端口</li><li>场景2：重要服务器，避免在网络发生拓扑变化时被阻塞，同时可以使其快速上线</li><li>场景3：可以用于连接DHCP客户端，使其客户端快速获得IP地址</li></ul><ul><li>场景4：在大型网络中，连接大量终端PC的交换机可以使用边缘端口，因为当PC开机时，连接PC的端口为DP会UP并进入转发状态，交换机会产生大量的TC BPDU，导致网络中的交换机频繁刷新自身的MAC地址表。</li></ul></li></ul><blockquote><p>一般来说开启stp enable为pc机接口上，应为它不需要参与生成树计算</p></blockquote><h3 id="Stp-cost-200000"><a href="#Stp-cost-200000" class="headerlink" title="Stp cost 200000"></a>Stp cost 200000</h3><ul><li>stp cost 是生成树协议在选举根端口和指定端口时需要使用的一个重要参数。开销越小被选举为根端口或指定端口的可能性就越大。stp cost 100000这么大的开销值，这个端口基本上就是出于逻辑阻塞状态了，除非交换机上其他端口上的物理线路都断开了，这个才有可能进入到转发状态。</li><li>说人话就是设置了这个他就是堵塞的，应为它的优先级很低，除非正常线路断开否则它不会启用。<h3 id="stp-bpdu-protection"><a href="#stp-bpdu-protection" class="headerlink" title="stp bpdu-protection"></a>stp bpdu-protection</h3></li><li>需要配置在BR根端口，使用命令<code>display stp brief </code>查看Root状态是哪个，哪个就是根端口。</li></ul><blockquote><p>root=根端口 alte=替代端口=alternative desi=指定端口=designation</p></blockquote><p>更新中….</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="eNSP（华为模拟器）"><a href="#eNSP（华为模拟器）" class="headerlink" title="eNSP（华为模拟器）"></a>eNSP（华为模拟器）</h1><h2 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h2><h3 id="manual"><a href="#manual" class="headerlink" title="manual"></a>manual</h3><blockquote><p>优点</p></blockquote><ul><li> 手工链路聚合，成员接口手工配置加入，没有LACP的参与。</li><li> 当需要在两个直连设备间提供一个较大的链路带宽而设备又不支持LACP协议时，可以使用手工模式。</li><li> 不同厂家之间无需担心协议报文协商问题。</li></ul><blockquote><p>缺点</p></blockquote><ul><li>当一条链路故障时，故障链路无法转发数据，链路聚合组自动在剩余的两条活动链路中分担流量。<br>手工模式Eth-Trunk可以完成多个物理接口聚合成一个Eth-Trunk口来提高带宽，同时能够检测到同一聚合组内的成员链路有断路等有限故障，<strong>但是无法检测到链路层故障、链路错连等故障</strong>。</li><li><ul><li> 单根纤芯发生故障时，可能出现收端正常的一方端口处于UP，而出现单通，所以这种情况一般要求端口匹配状态为自适应状态。<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3></li></ul></li></ul><blockquote><p>优点</p></blockquote><ul><li>提高Eth-Trunk的容错性，并且能提供备份功能，保证成员链路的高可靠性</li></ul><blockquote><p>缺点</p></blockquote><ul><li>不同厂家对接可能因为协议报文的处理机制等不同，产生对接异常。</li><li>而且一般来说：动态聚合要同端口匹配方式为强制相配套使用，因为：如果端口匹配方式为自适应，那么当物理链路质量不好时，可能端口状态频繁出现变化，相应的聚合组状态也会频繁出现up、down故障。</li></ul><blockquote><p><strong>不同厂家对接，建议设置聚合组为静态、端口设置为自适应方式</strong></p></blockquote><h3 id="max-active-linknumber"><a href="#max-active-linknumber" class="headerlink" title="max active-linknumber"></a>max active-linknumber</h3><ul><li>一般来说聚合的线路为三条就是选择<strong>max active-linknumber 2</strong>，这样即时有一条down了也可以即时补进去一条。还是为2条在工作</li></ul><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="创建脚注格式类似这样-RUNOOB"><a href="#创建脚注格式类似这样-RUNOOB" class="headerlink" title="创建脚注格式类似这样 ^RUNOOB"></a>创建脚注格式类似这样 <a href="56465">^RUNOOB</a></h2><h3 id="stp-edged-port-enable-amp-disable"><a href="#stp-edged-port-enable-amp-disable" class="headerlink" title="stp edged-port enable &amp; disable"></a>stp edged-port enable &amp; disable</h3><ul><li><p>stp edged-port enable 配置的接口不参与生成树计算，即可以转发BPDU也可以接收BPDU</p></li><li><p>:stp disable禁用STP/RSTP/MSTP功能，如果在链接客户端的接口上配置了此命令，这个接口禁用STP/RSTP/MSTP功能，即不参与生成树计算也不转发BPDU报文</p></li><li><p>定义：在 RSTP 里面，如果某一个指定端口位于整个网络的边缘，即不再与其他交换设备连接，而是直接与终端设备直连，这种端口叫做边缘端口。</p></li><li><p>特点</p></li></ul><ul><li>边缘端口的特性是端口up后可直接进入forwarding状态，而不需要等待转发延时，所以边缘端口连接的设备是终端设备，电脑，服务器等需要快速访问网络的设备。<ul><li>场景1：在连接服务器，DHCP客户端，防火墙，打印机，路由器等终端设备可以使用边缘端口</li><li>场景2：重要服务器，避免在网络发生拓扑变化时被阻塞，同时可以使其快速上线</li><li>场景3：可以用于连接DHCP客户端，使其客户端快速获得IP地址</li></ul><ul><li>场景4：在大型网络中，连接大量终端PC的交换机可以使用边缘端口，因为当PC开机时，连接PC的端口为DP会UP并进入转发状态，交换机会产生大量的TC BPDU，导致网络中的交换机频繁刷新自身的MAC地址表。</li></ul></li></ul><blockquote><p>一般来说开启stp enable为pc机接口上，应为它不需要参与生成树计算</p></blockquote><h3 id="Stp-cost-200000"><a href="#Stp-cost-200000" class="headerlink" title="Stp cost 200000"></a>Stp cost 200000</h3><ul><li>stp cost 是生成树协议在选举根端口和指定端口时需要使用的一个重要参数。开销越小被选举为根端口或指定端口的可能性就越大。stp cost 100000这么大的开销值，这个端口基本上就是出于逻辑阻塞状态了，除非交换机上其他端口上的物理线路都断开了，这个才有可能进入到转发状态。</li><li>说人话就是设置了这个他就是堵塞的，应为它的优先级很低，除非正常线路断开否则它不会启用。<h3 id="stp-bpdu-protection"><a href="#stp-bpdu-protection" class="headerlink" title="stp bpdu-protection"></a>stp bpdu-protection</h3></li><li>需要配置在BR根端口，使用命令<code>display stp brief </code>查看Root状态是哪个，哪个就是根端口。</li></ul><blockquote><p>root=根端口 alte=替代端口=alternative desi=指定端口=designation</p></blockquote><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><p>更新中….</p>]]></content>
       
       
       <categories>
