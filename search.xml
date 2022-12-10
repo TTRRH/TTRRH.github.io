@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux笔记</title>
+      <link href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/12/10/Linux%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos8"><a href="#centos8" class="headerlink" title="centos8"></a>centos8</h1><h2 id="yum配置"><a href="#yum配置" class="headerlink" title="yum配置"></a>yum配置</h2><p>我只推荐使用网络yum</p><ul><li>阿里源</li><li>等等</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Centos8学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>eNSP笔记</title>
       <link href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/"/>
       <url>/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/</url>

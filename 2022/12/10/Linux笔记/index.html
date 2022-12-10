@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2022/11 
+      Linux笔记 
       
       
       |
@@ -142,86 +142,198 @@ daovoice('update');
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Linux笔记</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-12-10 19:32:36
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Centos8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos8学习笔记">
+                    <b>#</b> Centos8学习笔记
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Linux/" title="Linux">
+                    #Linux
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h1 id="centos8"><a href="#centos8" class="headerlink" title="centos8"></a>centos8</h1><h2 id="yum配置"><a href="#yum配置" class="headerlink" title="yum配置"></a>yum配置</h2><p>我只推荐使用网络yum</p>
+<ul>
+<li>阿里源</li>
+<li>等等</li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-12-10 19:32:36
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Centos8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos8学习笔记">
+                        <b>#</b> Centos8学习笔记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Linux/" title="Linux">
+                        #Linux
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Linux笔记">
-        <div class="time-m-d">12-10</div>
-        <div class="title">
-          <a href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/">
-            <span>Linux笔记</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="eNSP笔记">
-        <div class="time-m-d">11-26</div>
-        <div class="title">
-          <a href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/">
-            <span>eNSP笔记</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#centos8"><span class="toc-text">centos8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yum%E9%85%8D%E7%BD%AE"><span class="toc-text">yum配置</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="eNSP华为模拟器">
-        <div class="time-m-d">10-19</div>
-        <div class="title">
-          <a href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/">
-            <span>eNSP华为模拟器</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="分析羊了个羊（无限刷）">
-        <div class="time-m-d">09-16</div>
-        <div class="title">
-          <a href="/2022/09/16/%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E5%88%86%E6%9E%90/">
-            <span>分析羊了个羊（无限刷）</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="hexo博客文章">
-        <div class="time-m-d">04-12</div>
-        <div class="title">
-          <a href="/2022/04/12/hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
-            <span>hexo博客文章</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="博客创建心得">
-        <div class="time-m-d">03-18</div>
-        <div class="title">
-          <a href="/2022/03/18/%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E5%BF%83%E5%BE%97/">
-            <span>博客创建心得</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="ctfshow七夕杯签到">
-        <div class="time-m-d">02-19</div>
-        <div class="title">
-          <a href="/2022/02/19/%C2%96CTFshow%E5%8D%95%E8%BA%AB%E6%9D%AF%E7%AD%BE%E5%88%B0%E7%BB%84/">
-            <span>ctfshow七夕杯签到</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -501,6 +613,24 @@ daovoice('update');
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Linux%E7%AC%94%E8%AE%B0 + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F12%2F10%2FLinux%25E7%25AC%2594%25E8%25AE%25B0%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/12/10/Linux%E7%AC%94%E8%AE%B0/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
