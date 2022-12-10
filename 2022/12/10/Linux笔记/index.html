@@ -198,8 +198,8 @@ daovoice('update');
                 <i class="iconfont icon-bookmark" title="Categories"></i>
                 
                 <span class="span--category">
-                  <a href="/categories/Centos8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos8学习笔记">
-                    <b>#</b> Centos8学习笔记
+                  <a href="/categories/Centos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos学习笔记">
+                    <b>#</b> Centos学习笔记
                   </a>
                 </span>
                 
@@ -209,14 +209,14 @@ daovoice('update');
                 <i class="iconfont icon-tags mr-10" title="Tags"></i>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
-                    #学习笔记
+                  <a href="/tags/Linux/" title="Linux">
+                    #Linux
                   </a>
                 </span>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/Linux/" title="Linux">
-                    #Linux
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
                   </a>
                 </span>
                 
@@ -226,9 +226,38 @@ daovoice('update');
       <div class="markdown-body">
         <h1 id="centos8"><a href="#centos8" class="headerlink" title="centos8"></a>centos8</h1><h2 id="yum配置"><a href="#yum配置" class="headerlink" title="yum配置"></a>yum配置</h2><p>我只推荐使用网络yum</p>
 <ul>
-<li>阿里源</li>
-<li>等等</li>
+<li>网络源：阿里yum<br><code>centos8</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+<code>centos7</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repo.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo</span><br></pre></td></tr></table></figure>
+等等</li>
+<li>本地yum挂载：速度慢，不建议捏。</li>
 </ul>
+<ol>
+<li>第一步：<ul>
+<li>检查dvd光驱是否连接，使用<strong>lsblk df</strong>查看都可以</li>
+</ul>
+</li>
+<li>第二步：<ul>
+<li>创建挂载点<strong>mkdir /mnt/a</strong>，并用<strong>mount /dev/cdrom /mnt/a</strong>进行挂载</li>
+<li>使用<strong>df -hT /mnt/a</strong>查看挂载记录</li>
+</ul>
+</li>
+<li>第三步：<ul>
+<li>使用**cd /etc/yum.repo.d/**到yum配置目录</li>
+<li>mkdir /aa</li>
+<li>进行备份*<em>mv <em>.repo aa</em></em></li>
+<li>拷贝一份yum.base.repo出来<strong>cp -p  .</strong> （这里的点是当前目录意思）</li>
+</ul>
+</li>
+<li>第四步：<ul>
+<li>vim /etc/yum.Base.repo</li>
+<li>改目录为创建的挂载点</li>
+<li>wq保存</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>麻烦捏，直接网络源就好了。</p>
+</blockquote>
 
       </div>
       
@@ -251,8 +280,8 @@ daovoice('update');
                     <i class="iconfont icon-bookmark" title="Categories"></i>
                     
                     <span class="span--category">
-                      <a href="/categories/Centos8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos8学习笔记">
-                        <b>#</b> Centos8学习笔记
+                      <a href="/categories/Centos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Centos学习笔记">
+                        <b>#</b> Centos学习笔记
                       </a>
                     </span>
                     
@@ -262,14 +291,14 @@ daovoice('update');
                     <i class="iconfont icon-tags mr-10" title="Tags"></i>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
-                        #学习笔记
+                      <a href="/tags/Linux/" title="Linux">
+                        #Linux
                       </a>
                     </span>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/Linux/" title="Linux">
-                        #Linux
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
                       </a>
                     </span>
                     
@@ -277,6 +306,11 @@ daovoice('update');
               
           </div>
           <div class="post-foot-prev">
+            
+              <a href="/2022/12/10/linux%E5%BF%AB%E6%8D%B7%E9%94%AE/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
             
           </div>
         </div>

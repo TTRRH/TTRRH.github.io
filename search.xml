@@ -4,25 +4,52 @@
   
     
     <entry>
-      <title>Linux笔记</title>
-      <link href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/"/>
-      <url>/2022/12/10/Linux%E7%AC%94%E8%AE%B0/</url>
+      <title>linux快捷键</title>
+      <link href="/2022/12/10/linux%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2022/12/10/linux%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
       
-        <content type="html"><![CDATA[<h1 id="centos8"><a href="#centos8" class="headerlink" title="centos8"></a>centos8</h1><h2 id="yum配置"><a href="#yum配置" class="headerlink" title="yum配置"></a>yum配置</h2><p>我只推荐使用网络yum</p><ul><li>阿里源</li><li>等等</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h3 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h3><blockquote><p>cd /home   进入 ‘/home’ 目录<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd - 返回上次所在目录<br>cp file1 file2 将file1复制为file2<br>cp -a dir1 dir2 复制一个目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录（.代表当前目录）<br>ls 查看目录中的文件<br>ls -a 显示隐藏文件<br>ls -l 显示详细信息<br>ls -lrt 按时间显示文件（l表示详细列表，r表示反向排序，t表示按时间排序）<br>pwd 显示工作路径<br>mkdir dir1 创建 ‘dir1’ 目录<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>mv dir1 dir2 移动/重命名一个目录<br>rm -f file1 删除 ‘file1’<br>rm -rf dir1 删除 ‘dir1’ 目录及其子目录内容</p></blockquote><h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容:"></a>查看文件内容:</h3><blockquote><p>cat file1 从第一个字节开始正向查看文件的内容<br>head -2 file1 查看一个文件的前两行<br>more file1 查看一个长文件的内容<br>tac file1 从最后一行开始反向查看一个文件的内容<br>tail -3 file1 查看一个文件的最后三行</p></blockquote><h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理:"></a>文本处理:</h3><blockquote><p>grep str /tmp/test 在文件 ‘/tmp/test’ 中查找 “str”<br>grep ^str /tmp/test 在文件 ‘/tmp/test’ 中查找以 “str” 开始的行<br>grep [0-9] /tmp/test 查找 ‘/tmp/test’ 文件中所有包含数字的行<br>grep str -r /tmp/* 在目录 ‘/tmp’ 及其子目录中查找 “str”<br>diff file1 file2 找出两个文件的不同处<br>sdiff file1 file2 以对比的方式显示两个文件的不同</p></blockquote><h3 id="查找"><a href="#查找" class="headerlink" title="查找:"></a>查找:</h3><blockquote><p>find / -name file1 从 ‘/‘ 开始进入根文件系统查找文件和目录<br>find / -user user1 查找属于用户 ‘user1’ 的文件和目录<br>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中查找以 ‘.bin’ 结尾的文件<br>find /usr/bin -type f -atime +100 查找在过去100天内未被使用过的执行文件<br>find /usr/bin -type f -mtime -10 查找在10天内被创建或者修改过的文件<br>locate *.ps 寻找以 ‘.ps’ 结尾的文件，先运行 ‘updatedb’ 命令<br>find -name ‘*.[ch]’ | xargs grep -E ‘expr’ 在当前目录及其子目录所有.c和.h文件中查找 ‘expr’<br>find -type f -print0 | xargs -r0 grep -F ‘expr’ 在当前目录及其子目录的常规文件中查找 ‘expr’<br>find -maxdepth 1 -type f | xargs grep -F ‘expr’ 在当前目录中查找 ‘expr’</p></blockquote><h3 id="压缩和解压"><a href="#压缩和解压" class="headerlink" title="压缩和解压:"></a>压缩和解压:</h3><blockquote><p>bzip2 file1 压缩 file1<br>bunzip2 file1.bz2 解压 file1.bz2<br>gzip file1 压缩 file1<br>gzip -9 file1 最大程度压缩 file1<br>gunzip file1.gz 解压 file1.gz<br>tar -cvf archive.tar file1 把file1打包成 archive.tar<br>（-c: 建立压缩档案；-v: 显示所有过程；-f: 使用档案名字，是必须的，是最后一个参数）<br>tar -cvf archive.tar file1 dir1 把 file1，dir1 打包成 archive.tar<br>tar -tf archive.tar 显示一个包中的内容<br>tar -xvf archive.tar 释放一个包<br>tar -xvf archive.tar -C /tmp 把压缩包释放到 /tmp目录下<br>zip file1.zip file1 创建一个zip格式的压缩包<br>zip -r file1.zip file1 dir1 把文件和目录压缩成一个zip格式的压缩包<br>unzip file1.zip 解压一个zip格式的压缩包到当前目录<br>unzip test.zip -d /tmp/ 解压一个zip格式的压缩包到 /tmp 目录</p></blockquote><h3 id="yum工具"><a href="#yum工具" class="headerlink" title="yum工具:"></a>yum工具:</h3><blockquote><p>yum -y install [package] 下载并安装一个rpm包<br>yum localinstall [package.rpm] 安装一个rpm包，使用你自己的软件仓库解决所有依赖关系<br>yum -y update 更新当前系统中安装的所有rpm包<br>yum update [package] 更新一个rpm包<br>yum remove [package] 删除一个rpm包<br>yum list 列出当前系统中安装的所有包<br>yum search [package] 在rpm仓库中搜寻软件包<br>yum clean [package] 清除缓存目录（/var/cache/yum）下的软件包<br>yum clean headers 删除所有头文件<br>yum clean all 删除所有缓存的包和头文件</p></blockquote><h3 id="网络"><a href="#网络" class="headerlink" title="网络:"></a>网络:</h3><blockquote><p>ifconfig eth0 显示一个以太网卡的配置<br>ifconfig eth0 192.168.1.1 netmask 255.255.255.0 配置网卡的IP地址<br>ifdown eth0 禁用 ‘eth0’ 网络设备<br>ifup eth0 启用 ‘eth0’ 网络设备<br>iwconfig eth1 显示一个无线网卡的配置<br>iwlist scan 显示无线网络<br>ip addr show 显示网卡的IP地址</p></blockquote><h3 id="其他"><a href="#其他" class="headerlink" title="其他:"></a>其他:</h3><blockquote><p>su - 切换到root权限（与su有区别）<br>shutdown -h now 关机<br>shutdown -r now 重启<br>top 罗列使用CPU资源最多的linux任务 （输入q退出）<br>pstree 以树状图显示程序<br>man ping 查看参考手册（例如ping 命令）<br>passwd 修改密码<br>df -h 显示磁盘的使用情况<br>cal -3 显示前一个月，当前月以及下一个月的月历<br>cal 10 1988 显示指定月，年的月历<br>date –date ‘1970-01-01 UTC 1427888888 seconds’ 把一相对于1970-01-01 00:00的秒数转换成时间</p></blockquote><h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键:"></a>常用快捷键:</h1><blockquote><p>CentOS 6.4 中可以通过系统-&gt;首选项-&gt;键盘快捷键来设置快捷键，如图所示。例如可将运行终端的快捷键设为Ctrl+Alt+T。<br>Ctrl + u 删除光标之前到行首的字符<br>Ctrl + k 删除光标之前到行尾的字符<br>Ctrl + c 取消当前行输入的命令，相当于Ctrl + Break<br>Ctrl + a 光标移动到行首（ahead of line），相当于通常的Home键<br>Ctrl + e 光标移动到行尾（end of line）<br>Ctrl + f 光标向前（forward）移动一个字符位置<br>Ctrl + b 光标往回（backward）移动一个字符位置<br>Ctrl + l 清屏，相当于执行clear命令<br>Ctrl + r 显示:号提示，根据用户输入查找相关历史命令（reverse-i-search）<br>Ctrl + w 删除从光标位置前到当前所处单词（word）的开头<br>Ctrl + t 交换光标位置前的两个字符<br>Ctrl + y 粘贴最后一次被删除的单词<br>Ctrl + Alt + d 显示桌面<br>Alt + b 光标往回（backward）移动到前一个单词<br>Alt + d 删除从光标位置到当前所处单词的末尾<br>Alt + F2 运行<br>Alt + F4 关闭当前窗口<br>Alt + F9 最小化当前窗口<br>Alt + F10 最大化当前窗口<br>Alt + Tab 切换窗口<br>Alt +按住左键 移动窗口（或在最下面的任务栏滚动鼠标滑轮）</p></blockquote><blockquote><p>[鼠标中间键] 粘贴突出显示的文本。使用鼠标左键来选择文本。把光标指向想粘贴文本的地方。点击鼠标中间键来粘贴。</p></blockquote><blockquote><p>[Tab] 命令行自动补全。使用 shell 提示时可使用这一方式。键入命令或文件名的前几个字符，然后按 [Tab] 键，它会自动补全命令或显示匹配键入字符的所有命令。</p></blockquote><blockquote><p>在桌面或文件管理器中直接按 / 就可以输入位置，打开文件管理器。</p></blockquote><blockquote><p>快速搜索：在 vi 或 Firefox 中直接按 / 即可进入搜索状态。</p></blockquote><blockquote><p>网站链接和图片可直接拖放到桌面或者目录，可以马上下载。</p></blockquote><blockquote><p>直接将文件管理器中的文件拖到终端中就可以在终端中得到完整的路径名。</p></blockquote><blockquote><p>在滚动条的空白处点击鼠标中键，屏幕即滚动到那个地方。</p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> Centos8学习笔记 </category>
+          <category> Centos学习笔记 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> Linux </tag>
+            
             <tag> 学习笔记 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux笔记</title>
+      <link href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/12/10/Linux%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="centos8"><a href="#centos8" class="headerlink" title="centos8"></a>centos8</h1><h2 id="yum配置"><a href="#yum配置" class="headerlink" title="yum配置"></a>yum配置</h2><p>我只推荐使用网络yum</p><ul><li>网络源：阿里yum<br><code>centos8</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure><code>centos7</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repo.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo</span><br></pre></td></tr></table></figure>等等</li><li>本地yum挂载：速度慢，不建议捏。</li></ul><ol><li>第一步：<ul><li>检查dvd光驱是否连接，使用<strong>lsblk df</strong>查看都可以</li></ul></li><li>第二步：<ul><li>创建挂载点<strong>mkdir /mnt/a</strong>，并用<strong>mount /dev/cdrom /mnt/a</strong>进行挂载</li><li>使用<strong>df -hT /mnt/a</strong>查看挂载记录</li></ul></li><li>第三步：<ul><li>使用**cd /etc/yum.repo.d/**到yum配置目录</li><li>mkdir /aa</li><li>进行备份*<em>mv <em>.repo aa</em></em></li><li>拷贝一份yum.base.repo出来<strong>cp -p  .</strong> （这里的点是当前目录意思）</li></ul></li><li>第四步：<ul><li>vim /etc/yum.Base.repo</li><li>改目录为创建的挂载点</li><li>wq保存</li></ul></li></ol><blockquote><p>麻烦捏，直接网络源就好了。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Centos学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
             <tag> Linux </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
       
@@ -47,9 +74,9 @@
       
         <tags>
             
-            <tag> eNSP </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> eNSP </tag>
             
         </tags>
       
@@ -74,9 +101,9 @@
       
         <tags>
             
-            <tag> eNSP </tag>
-            
             <tag> 学习笔记 </tag>
+            
+            <tag> eNSP </tag>
             
         </tags>
       
