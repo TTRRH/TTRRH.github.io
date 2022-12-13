@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="RpWn" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Python原创力 
+      
+      
+      |
+    
+     RpWn
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/2.png">
+    <link rel="icon" href="/images/2.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+daovoice('init', {
+ app_id: "54c5cfbb"
+});
+daovoice('update');
+</script>
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img no-lazy src="/images/avatar.png" alt="">
+      
+      
+    </a>
+    
+    <div class="nickname"><a href="/">𝙍𝙥𝙒𝙣</a></div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=7340300768&auto=1&height=32"></iframe>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+      
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">档案</a>
+        </li>
+      
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+      
+    </ul>
+  </div>
+  
+  
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Python原创力</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-12-13 18:18:29
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Python/" title="Python">
+                    <b>#</b> Python
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Python/" title="Python">
+                    #Python
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%8E%9F%E5%88%9B%E5%8A%9B/" title="原创力">
+                    #原创力
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>仅供参考</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br></pre></td><td class="code"><pre><span class="line"># !/usr/bin/python</span><br><span class="line"># -*- coding: UTF-8 -*-</span><br><span class="line">import re</span><br><span class="line">import json</span><br><span class="line">import os</span><br><span class="line">import shutil</span><br><span class="line">import sys</span><br><span class="line">import time</span><br><span class="line">import requests</span><br><span class="line">import img2pdf</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">from alive_progress import alive_bar</span><br><span class="line">from requests.exceptions import SSLError</span><br><span class="line"></span><br><span class="line">png_headers = &#123;</span><br><span class="line">    &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36&#x27;,</span><br><span class="line">    &#x27;Referer&#x27;: &#x27;https://max.book118.com/&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def down_pngs(pageIndex):</span><br><span class="line">    print(pngs[pageIndex])</span><br><span class="line">    down_url = &#x27;https://view-cache.book118.com&#x27; + pngs[pageIndex]</span><br><span class="line">    print(down_url)</span><br><span class="line">    res = requests.get(url=down_url)</span><br><span class="line">    try:</span><br><span class="line">        png = res.content</span><br><span class="line">        with open(os.path.join(temp_dir, str(pageIndex) + &#x27;.jpeg&#x27;), &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(png)</span><br><span class="line">    except:</span><br><span class="line">        return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">logo = &quot;&quot;&quot;                  __  __</span><br><span class="line">      _ _        /_@)_@) \          /^^\ /^\ /^^\_ </span><br><span class="line">    _/oo \____/~&#x27;&#x27;. . .  &#x27;~\       /&#x27;\&#x27;&#x27;  ~ &#x27;&#x27;~~&#x27; -&#x27;\_ </span><br><span class="line">   / &#x27;.&#x27;. ~.~.~.       .&#x27;    ~ |     /&#x27;\~~..&#x27;&#x27;&#x27;&#x27;.&#x27;&#x27; &#x27;&#x27;  ~\_ </span><br><span class="line">  (&#x27;_&#x27;_&#x27;_&#x27;_&#x27;_&#x27;_&#x27;_&#x27;_  &#x27; :   &#x27;     \_/&#x27; &#x27;.&#x27;&#x27;  . &#x27;.   .&#x27;&#x27;  &#x27;.  ~\_ </span><br><span class="line">  ~V~V~V~V  \   ~\  &#x27;&#x27; &#x27;~  &#x27;   &#x27;&#x27; ~   `   ~  &#x27;&#x27;   ~\_ </span><br><span class="line">    /\~/\~/\~/\~/|/  &#x27;   &#x27;&#x27;  _   &#x27; ~ &#x27;&#x27;  &#x27;    ~  &#x27;&#x27; __  &#x27;  ..  \_ </span><br><span class="line"> &lt;-- --- ---.---.--/&#x27;   &#x27;&#x27;   /&#x27;  &#x27;\_ &#x27;&#x27; &#x27;: ~ ;;&#x27;&#x27;    &#x27; /&#x27;&#x27;; \ ;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27; &#x27;&#x27; ~\ _ </span><br><span class="line">    \~ &#x27;. . : .:: ~. :.  /_&#x27;&#x27;&#x27;_&#x27;&#x27; \_&#x27; :&#x27;&#x27;&#x27;_ : _ &#x27;&#x27;/&#x27;&#x27;_&#x27; &#x27;_ \:_ &#x27;&#x27;&#x27;&#x27; #&#x27;&#x27;..\/\/\/~/\~ &#x27;&#x27;~~~~~O</span><br><span class="line"> ~~ \-~ `---~~~---- \(_)(_)(_)/ ~ ~~&#x27; ~\(_)(_)(_)\_~_~_~_~_~/˜¤¹</span><br><span class="line"> ---------------------------------------------------------------------------------------------by:bean0283</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">print(logo)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    url = input(&#x27;请输入原创力文库url:&#x27;)</span><br><span class="line">    url = url.split(&#x27;?&#x27;)[0]</span><br><span class="line">    print(&#x27;下载地址：&#x27;, url)</span><br><span class="line">    temp_dir = url.split(&#x27;/&#x27;)[-1]</span><br><span class="line"></span><br><span class="line">    # 删除老的临时文件夹并新建临时文件夹</span><br><span class="line">    if os.path.exists(temp_dir):</span><br><span class="line">        shutil.rmtree(temp_dir)</span><br><span class="line">    os.mkdir(temp_dir)</span><br><span class="line"></span><br><span class="line">    print(&#x27;开始下载 HTML...&#x27;, end=&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        response = requests.get(url=url)</span><br><span class="line">    except(SSLError):</span><br><span class="line">        print(&quot;\n\033[31m不要使用代理软件-------\033[0m&quot;)</span><br><span class="line">        print(&quot;\033[31m请关闭代理软件后重新运行程序\033[0m&quot;)</span><br><span class="line">        print(&quot;\033[31m请关闭vpn软件后重新运行程序\033[0m&quot;)</span><br><span class="line">        sys.exit(0)</span><br><span class="line"></span><br><span class="line">    page = response.text</span><br><span class="line"></span><br><span class="line">    print(&#x27;成功. \n开始解析 HTML...&#x27;, end=&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">    title = re.search(&#x27;title: (.*),&#x27;, page).group(1).replace(&quot;&#x27;&quot;, &quot;&quot;)</span><br><span class="line">    view_token = re.search(&#x27;view_token: (.*)\&#x27;&#x27;, page).group(1).replace(&quot;&#x27;&quot;, &quot;&quot;)</span><br><span class="line">    filetype = re.search(&#x27;format: (.*)\&#x27;&#x27;, page).group(1).replace(&quot;&#x27;&quot;, &quot;&quot;)</span><br><span class="line">    senddate = re.search(&#x27;senddate: (.*),&#x27;, page).group(1).replace(&quot;&#x27;&quot;, &quot;&quot;)</span><br><span class="line">    aid = re.search(&#x27; aid: (.*), //解密后的id&#x27;, page).group(1)</span><br><span class="line">    actual_page = int(re.search(&#x27;actual_page: (.*),&#x27;, page).group(1))  # 真实页数</span><br><span class="line">    preview_page = int(re.search(&#x27;preview_page: (.*),&#x27;, page).group(1))  # 可预览页数</span><br><span class="line"></span><br><span class="line">    if actual_page &gt; preview_page:</span><br><span class="line">        print(&quot;\n\033[31m该文档为限制文档，无法下载全部内容，请用vip+rmb，该问题无需反馈给开发者，他也不会解决！！\033[0m\n&quot;)</span><br><span class="line"></span><br><span class="line">    output = title  # 输出文件（夹）</span><br><span class="line">    print(&#x27;解析成功. &#x27;)</span><br><span class="line">    print(&#x27;文档标题: &#x27;, title)</span><br><span class="line">    # 接口每次会返回6个下载page地址</span><br><span class="line">    list_pn = list(range(1, preview_page + 1, 6))</span><br><span class="line"></span><br><span class="line">    # print(pngs)</span><br><span class="line">    if filetype == &#x27;pdf&#x27;:</span><br><span class="line">        pngs = &#123;&#125;</span><br><span class="line">        print(&#x27;解析到pdf文档, 准备开始解析下载..&#x27;, end=&#x27;&#x27;)</span><br><span class="line">        print(&#x27;解析成功.\n正在获取pngs下载地址...&#x27;)</span><br><span class="line">        print(&#x27;受接口限制，2s访问一次，请耐心等待所有接口信息返回&#x27;)</span><br><span class="line"></span><br><span class="line">        with alive_bar(len(list_pn), title=&#x27;ing...&#x27;) as bar:</span><br><span class="line">            for pn in list_pn:</span><br><span class="line">                bar()</span><br><span class="line">                down_page_url = &#x27;https://openapi.book118.com/getPreview.html?project_id=1&amp;aid=&#123;&#125;&amp;view_token=&#123;&#125;&amp;page=&#123;&#125;&amp;_=&#123;&#125;&#x27;.format(</span><br><span class="line">                    aid, view_token, pn, str(int(time.time())))</span><br><span class="line">                jsonpReturn = requests.get(url=down_page_url)</span><br><span class="line">                page = re.search(&#x27;jsonpReturn\((.*)\)&#x27;, jsonpReturn.text).group(1)</span><br><span class="line">                data_temp = json.loads(page)[&#x27;data&#x27;]</span><br><span class="line">                # print(data_temp)</span><br><span class="line">                pngs.update(&#123;x: data_temp[x] for x in data_temp&#125;)  # 这里有个bug，若返回值的url为空时，这里不会报错，但会造成下载png时异常，暂时没有考虑处理</span><br><span class="line">                if pn != list_pn[-1]:</span><br><span class="line">                    time.sleep(2)</span><br><span class="line"></span><br><span class="line">        print(&#x27;\n开始下载 jpg(s)...&#x27;)</span><br><span class="line">        pagenums = list(range(1, len(pngs) + 1))</span><br><span class="line"></span><br><span class="line">        with alive_bar(len(pagenums), title=&#x27;ing...&#x27;) as bar:</span><br><span class="line">            for i in range(len(pagenums)):</span><br><span class="line">                bar()</span><br><span class="line">                down_url = &quot;https:&quot; + pngs[str(i + 1)]</span><br><span class="line">                request = requests.get(url=down_url, headers=png_headers)</span><br><span class="line">                try:</span><br><span class="line">                    page = request.content</span><br><span class="line">                    with open(os.path.join(temp_dir, str(pagenums[i]) + &#x27;.jpeg&#x27;), &#x27;wb&#x27;) as f:</span><br><span class="line">                        f.write(page)</span><br><span class="line">                except:</span><br><span class="line">                    continue</span><br><span class="line"></span><br><span class="line">        print(&#x27;\n开始合并图片成PDF...&#x27;, end=&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">        file_imgs = [os.path.join(temp_dir, str(i) + &#x27;.jpeg&#x27;) for i in pagenums]</span><br><span class="line">        # 不用以下代码会使img2pdf报错</span><br><span class="line">        for img_path in file_imgs:</span><br><span class="line">            with open(img_path, &#x27;rb&#x27;) as data:</span><br><span class="line">                img = Image.open(data)</span><br><span class="line">                # 将PNG中RGBA属性变为RGB，即可删掉alpha透明度通道</span><br><span class="line">                img.convert(&#x27;RGB&#x27;).save(img_path)</span><br><span class="line"></span><br><span class="line">        with open(output + &#x27;.pdf&#x27;, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(img2pdf.convert(file_imgs))</span><br><span class="line"></span><br><span class="line">        shutil.rmtree(temp_dir)</span><br><span class="line"></span><br><span class="line">        print(&#x27;下载成功.&#x27;)</span><br><span class="line">        print(&#x27;保存到 &#x27; + output + &#x27;.pdf&#x27;)</span><br><span class="line">    elif filetype in [&#x27;docx&#x27;, &#x27;doc&#x27;]:</span><br><span class="line">        pngs = &#123;&#125;</span><br><span class="line">        print(&#x27;解析到&#123;&#125;文档, 准备开始解析下载..&#x27;.format(filetype), end=&#x27;&#x27;)</span><br><span class="line">        print(&#x27;解析成功.\n正在获取pngs下载地址...&#x27;)</span><br><span class="line">        print(&#x27;受接口限制，2s访问一次，请耐心等待所有接口信息返回&#x27;)</span><br><span class="line">        x = 0</span><br><span class="line">        with alive_bar(len(list_pn), title=&#x27;ing...&#x27;) as bar:</span><br><span class="line">            for pn in list_pn:</span><br><span class="line"></span><br><span class="line">                down_page_url = &#x27;https://openapi.book118.com/getPreview.html?&amp;project_id=1&amp;aid=&#123;&#125;&amp;t=&#123;&#125;&amp;view_token=&#123;&#125;&amp;page=&#123;&#125;&amp;_=&#123;&#125;&#x27;.format(</span><br><span class="line">                    aid, senddate, view_token, pn, str(int(time.time())))</span><br><span class="line">                jsonpReturn = requests.get(url=down_page_url)</span><br><span class="line"></span><br><span class="line">                page = re.search(&#x27;jsonpReturn\((.*)\)&#x27;, jsonpReturn.text).group(1)</span><br><span class="line">                data_temp = json.loads(page)[&#x27;data&#x27;]</span><br><span class="line">                # print(data_temp)</span><br><span class="line">                bar()</span><br><span class="line">                pngs.update(&#123;x: data_temp[x] for x in data_temp&#125;)</span><br><span class="line">                if pn != list_pn[-1]:</span><br><span class="line">                    time.sleep(2)</span><br><span class="line"></span><br><span class="line">        print(&#x27;\n开始下载 jpg(s)...&#x27;)</span><br><span class="line">        pagenums = list(range(1, len(pngs) + 1))</span><br><span class="line"></span><br><span class="line">        with alive_bar(len(pagenums), title=&#x27;ing...&#x27;) as bar:</span><br><span class="line">            for i in range(len(pagenums)):</span><br><span class="line">                down_url = &quot;https:&quot; + pngs[str(i + 1)]</span><br><span class="line">                request = requests.get(url=down_url, headers=png_headers)</span><br><span class="line">                bar()</span><br><span class="line">                try:</span><br><span class="line">                    page = request.content</span><br><span class="line">                    with open(os.path.join(temp_dir, str(pagenums[i]) + &#x27;.jpeg&#x27;), &#x27;wb&#x27;) as f:</span><br><span class="line">                        f.write(page)</span><br><span class="line">                except:</span><br><span class="line">                    continue</span><br><span class="line"></span><br><span class="line">        print(&#x27;\n开始合并图片成PDF...&#x27;, end=&#x27;&#x27;)</span><br><span class="line"></span><br><span class="line">        file_imgs = [os.path.join(temp_dir, str(i) + &#x27;.jpeg&#x27;) for i in pagenums]</span><br><span class="line">        for img_path in file_imgs:</span><br><span class="line">            with open(img_path, &#x27;rb&#x27;) as data:</span><br><span class="line">                img = Image.open(data)</span><br><span class="line">                # 将PNG中RGBA属性变为RGB，即可删掉alpha透明度通道</span><br><span class="line">                img.convert(&#x27;RGB&#x27;).save(img_path)</span><br><span class="line"></span><br><span class="line">        with open(output + &#x27;.pdf&#x27;, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(img2pdf.convert(file_imgs))</span><br><span class="line">        # rea(temp_dir, output + &#x27;.pdf&#x27;)</span><br><span class="line"></span><br><span class="line">        shutil.rmtree(temp_dir)</span><br><span class="line"></span><br><span class="line">        print(&#x27;下载成功.&#x27;)</span><br><span class="line">        print(&#x27;保存到 &#x27; + output + &#x27;.pdf&#x27;)</span><br><span class="line"></span><br><span class="line">    else:</span><br><span class="line">        print(&#x27;不支持的参数.文件类型:&#x27;, filetype)</span><br><span class="line"></span><br><span class="line">    temp_ = os.path.realpath(sys.argv[0])</span><br><span class="line">    os.startfile(os.path.dirname(temp_))</span><br><span class="line">    print(&quot;执行完成,继续下载请黏贴url，结束请关闭窗口\n&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/12/12/RHEL%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-12-13 18:18:29
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Python/" title="Python">
+                        <b>#</b> Python
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Python/" title="Python">
+                        #Python
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%8E%9F%E5%88%9B%E5%8A%9B/" title="原创力">
+                        #原创力
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="wechat" target="_blank" rel="noopener" href="https://wa.me/qr/DKTJDO2AFX2FJ1">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/TTRRH">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="mailto:rpwnblog@outlook.com">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2022 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://rpwn.netlify.app/">HOM EPAGE |  by RpWn</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          SV：<span id="busuanzi_value_site_pv"></span>次
+        
+      
+          PV：<span id="busuanzi_value_page_pv"></span>次
+        
+      
+          UV：<span id="busuanzi_value_site_uv"></span>人
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Python%E5%8E%9F%E5%88%9B%E5%8A%9B + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F12%2F13%2FPython%25E5%258E%259F%25E5%2588%259B%25E5%258A%259B%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/12/13/Python%E5%8E%9F%E5%88%9B%E5%8A%9B/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(e){e.imageLazyLoadSetting.processImages=t;var n=e.imageLazyLoadSetting.isSPA,i=e.imageLazyLoadSetting.preloadRatio||1,r=o();function o(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){n&&(r=o());for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(e.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];e=function(){r=r.filter(function(t){return o!==t})},(t=o).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,t.removeAttribute("data-original"),e&&e()},t.src!==i&&(n.src=i))}()}function a(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",a),e.addEventListener("resize",a),e.addEventListener("orientationchange",a)}(this);</script></body>
+</html>
