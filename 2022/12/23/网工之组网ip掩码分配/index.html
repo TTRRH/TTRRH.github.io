@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2022/3 
+      网工之组网ip掩码分配 
       
       
       |
@@ -142,122 +142,224 @@ daovoice('update');
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">网工之组网ip掩码分配</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-12-23 20:54:22
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/%E7%BD%91%E5%B7%A5/" title="网工">
+                    <b>#</b> 网工
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E7%BB%84%E7%BD%91%E5%88%86%E9%85%8D/" title="组网分配">
+                    #组网分配
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h2 id="首要简介"><a href="#首要简介" class="headerlink" title="首要简介"></a>首要简介</h2><p>学习网工很多时候都需要自己划分网络段。（放假在家没什么要写的，水一篇）</p>
+<p>如:<br>已经某公司192.168.1.0/24，有ABCD四个部门，每个部门有30台电脑，请规划它们的子网ip</p>
+<h3 id="做题先审题"><a href="#做题先审题" class="headerlink" title="做题先审题"></a>做题先审题</h3><p>题目假设就如下：<br>已经某公司192.168.1.0/24，有ABCD四个部门，每个部门有30台电脑，请规划它们的子网ip<br>那么需要<code>4个子网</code> <code>主机数30</code> <code>掩码24</code><br>24位的二进制转换就是<code>11111111.11111111.11111111.00000000</code> </p>
+<h3 id="审题结束划分正确的子网"><a href="#审题结束划分正确的子网" class="headerlink" title="审题结束划分正确的子网"></a>审题结束划分正确的子网</h3><p><strong>众所周知，划分子网就是牺牲主机位来实现，意思就是占掉一个主机位</strong></p>
+<p>那么牺牲的主机位现在定义它位 <strong>n</strong> 公式为：<code>2^n ≥ 需要划分子网数量</code><br>根据公式所以得到需要占用2个主机位，但是很重要的是：<code>因为主机号和子网号不允许是全0或全1</code><br>当你选择占用两位时候，可得掩码为：255.255.255.192</p>
+<p>转换二进制：</p>
+<blockquote>
+<p>11111111.11111111.11111111.00000000 # 不可用<br>11111111.11111111.11111111.01000000<br>11111111.11111111.11111111.10000000<br>11111111.11111111.11111111.11000000 # 不可用</p>
+</blockquote>
+<p><code>因为主机号和子网号不允许是全0或全1，所以第一个和最后一个是不可用状态</code><br>那么实际只分配了两个子网，不符合要求。</p>
+<p>那么我需要再占用一位，占用三位后子网掩码为：255.255.255.224<br>转换为二进制:</p>
+<blockquote>
+<p>11111111.11111111.11111111.00000000 # 不可用<br>11111111.11111111.11111111.00100000<br>11111111.11111111.11111111.01000000<br>11111111.11111111.11111111.01100000<br>11111111.11111111.11111111.10000000<br>11111111.11111111.11111111.10100000<br>11111111.11111111.11111111.11000000<br>11111111.11111111.11111111.11100000 # 不可用</p>
+</blockquote>
+<p>但是得到了八个，两个不可用，我们只要用掉四个，那么就取前四个，剩下的备用即可。<br>那么子网转换后为：</p>
+<blockquote>
+<p>255.255.255.32<br>255.255.255.64<br>255.255.255.96<br>255.255.255.128<br>255.255.255.160<br>255.255.255.192</p>
+</blockquote>
+<h3 id="计算可用IP"><a href="#计算可用IP" class="headerlink" title="计算可用IP"></a>计算可用IP</h3><p>计算一下可用IP：</p>
+<blockquote>
+<p>255.255.255.32: 00100000-00111111<br>255.255.255.64：01000000-01011111<br>255.255.255.96：01100000-01111111<br>255.255.255.128：10000000-10011111<br>255.255.255.160：用不上留着备用<br>255.255.255.192：用不上留着备用</p>
+</blockquote>
+<p><code>因为ip中第一个是子网的地址，最后一个是广播地址，这是规定。</code><br>那么转换一下：</p>
+<blockquote>
+<p>255.255.255.32: 001 00001-001 11110<br>255.255.255.64：010 00001-010 11110<br>255.255.255.96：011 00001-011 11110<br>255.255.255.128：100 00001-100 11110 </p>
+</blockquote>
+<p>那么可用IP为：</p>
+<blockquote>
+<p>192.168.2.33- 192.168.2.62 子网：192.168.2.32<br>192.168.2.65- 192.168.2.94 子网：192.168.2.64<br>192.168.2.97- 192.168.2.126 子网：192.168.2.96<br>192.168.2.129- 192.168.2.158 子网：192.168.2.128</p>
+</blockquote>
+<h3 id="熟能生巧，勤加练习"><a href="#熟能生巧，勤加练习" class="headerlink" title="熟能生巧，勤加练习"></a>熟能生巧，勤加练习</h3><p>加油网工人</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/12/13/Python%E5%8E%9F%E5%88%9B%E5%8A%9B/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-12-23 20:54:22
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/%E7%BD%91%E5%B7%A5/" title="网工">
+                        <b>#</b> 网工
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E7%BB%84%E7%BD%91%E5%88%86%E9%85%8D/" title="组网分配">
+                        #组网分配
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="网工之组网ip掩码分配">
-        <div class="time-m-d">12-23</div>
-        <div class="title">
-          <a href="/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/">
-            <span>网工之组网ip掩码分配</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Python原创力">
-        <div class="time-m-d">12-13</div>
-        <div class="title">
-          <a href="/2022/12/13/Python%E5%8E%9F%E5%88%9B%E5%8A%9B/">
-            <span>Python原创力</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E8%A6%81%E7%AE%80%E4%BB%8B"><span class="toc-text">首要简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E9%A2%98%E5%85%88%E5%AE%A1%E9%A2%98"><span class="toc-text">做题先审题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E9%A2%98%E7%BB%93%E6%9D%9F%E5%88%92%E5%88%86%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%AD%90%E7%BD%91"><span class="toc-text">审题结束划分正确的子网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%8F%AF%E7%94%A8IP"><span class="toc-text">计算可用IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%9F%E8%83%BD%E7%94%9F%E5%B7%A7%EF%BC%8C%E5%8B%A4%E5%8A%A0%E7%BB%83%E4%B9%A0"><span class="toc-text">熟能生巧，勤加练习</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="RHEL配置笔记">
-        <div class="time-m-d">12-12</div>
-        <div class="title">
-          <a href="/2022/12/12/RHEL%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/">
-            <span>RHEL配置笔记</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="linux快捷键">
-        <div class="time-m-d">12-10</div>
-        <div class="title">
-          <a href="/2022/12/10/linux%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-            <span>linux快捷键</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Linux笔记">
-        <div class="time-m-d">12-10</div>
-        <div class="title">
-          <a href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/">
-            <span>Linux笔记</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="eNSP笔记">
-        <div class="time-m-d">11-26</div>
-        <div class="title">
-          <a href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/">
-            <span>eNSP笔记</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="eNSP华为模拟器">
-        <div class="time-m-d">10-19</div>
-        <div class="title">
-          <a href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/">
-            <span>eNSP华为模拟器</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="分析羊了个羊（无限刷）">
-        <div class="time-m-d">09-16</div>
-        <div class="title">
-          <a href="/2022/09/16/%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E5%88%86%E6%9E%90/">
-            <span>分析羊了个羊（无限刷）</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="hexo博客文章">
-        <div class="time-m-d">04-12</div>
-        <div class="title">
-          <a href="/2022/04/12/hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
-            <span>hexo博客文章</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="博客创建心得">
-        <div class="time-m-d">03-18</div>
-        <div class="title">
-          <a href="/2022/03/18/%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA%E5%BF%83%E5%BE%97/">
-            <span>博客创建心得</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="ctfshow七夕杯签到">
-        <div class="time-m-d">02-19</div>
-        <div class="title">
-          <a href="/2022/02/19/%C2%96CTFshow%E5%8D%95%E8%BA%AB%E6%9D%AF%E7%AD%BE%E5%88%B0%E7%BB%84/">
-            <span>ctfshow七夕杯签到</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -537,6 +639,24 @@ daovoice('update');
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F12%2F23%2F%25E7%25BD%2591%25E5%25B7%25A5%25E4%25B9%258B%25E7%25BB%2584%25E7%25BD%2591ip%25E6%258E%25A9%25E7%25A0%2581%25E5%2588%2586%25E9%2585%258D%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
