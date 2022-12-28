@@ -11,6 +11,11 @@
   
   <title>
     
+      eNSP笔记——BGP 
+      
+      
+      |
+    
      RpWn
   </title>
 
@@ -137,149 +142,202 @@ daovoice('update');
 
 
       <div class="flex-container">
-        <div class="container index">
-  <div class="post-list">
-    <!-- 遍历渲染文章 -->
-    
-      <div class="post-item" title="eNSP笔记——BGP">
-        <div class="time-m-d">2022-12-28</div>
-        <div class="title">
-          <a href="/2022/12/28/eNSP%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94BGP/">
-            
-              
-                <span>eNSP笔记——BGP</span>
-              
-            
-          </a>
-        </div>
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">eNSP笔记——BGP</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2022-12-28 14:58:09
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="eNSP学习笔记">
+                    <b>#</b> eNSP学习笔记
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                    #学习笔记
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/eNSP/" title="eNSP">
+                    #eNSP
+                  </a>
+                </span>
+                
+              </span>
+          
       </div>
-    
-      <div class="post-item" title="网工之组网ip掩码分配">
-        <div class="time-m-d">2022-12-23</div>
-        <div class="title">
-          <a href="/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/">
-            
-              
-                <span>网工之组网ip掩码分配</span>
-              
-            
-          </a>
-        </div>
+      <div class="markdown-body">
+        <h2 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h2><h3 id="BGP-路由黑洞"><a href="#BGP-路由黑洞" class="headerlink" title="BGP 路由黑洞"></a>BGP 路由黑洞</h3><h3 id="BGP路由控制-MED控制"><a href="#BGP路由控制-MED控制" class="headerlink" title="BGP路由控制 MED控制"></a>BGP路由控制 MED控制</h3><h3 id="BGP路由控制（Local-Preference路径选择）"><a href="#BGP路由控制（Local-Preference路径选择）" class="headerlink" title="BGP路由控制（Local Preference路径选择）"></a>BGP路由控制（Local Preference路径选择）</h3><h4 id="简要"><a href="#简要" class="headerlink" title="简要"></a>简要</h4><p>BGP路由器存在很多条去往同一个目标的BGP路由器时候，它会进行比较最后确定最优那条。</p>
+<ol>
+<li>首先会比较首选值（PrefVal）</li>
+<li>再第一条相同的时候再比较本地优先级（Local Preference，简称：LocPrf），谁的LocPrf值高谁优先<ul>
+<li>在LocPrf中，只在IBGP对等体进行通告。如果是EBGP对等体，那么传递过程就会不带有LocPrf。</li>
+<li>默认情况下，你在使用network宣告或者import引入到BGP路由器时候的LocPrf值为空。在接收到LocPrf值是空的时候，它会使用100作为这条路由的LocPrf值（意思就是它会改变Local Preference值为100）；如果接收过来的LocPrf值不是空的，那么就不修改。</li>
+<li>Local Preference（简称：LocPrf）他是一个32比特的整数，范围为：0~4294967295</li>
+</ul>
+</li>
+</ol>
+<h4 id="进行实验验证"><a href="#进行实验验证" class="headerlink" title="进行实验验证"></a>进行实验验证</h4><h3 id="BGP路由反射"><a href="#BGP路由反射" class="headerlink" title="BGP路由反射"></a>BGP路由反射</h3><h3 id="BGP路由综合实训"><a href="#BGP路由综合实训" class="headerlink" title="BGP路由综合实训"></a>BGP路由综合实训</h3>
       </div>
-    
-      <div class="post-item" title="Python原创力">
-        <div class="time-m-d">2022-12-13</div>
-        <div class="title">
-          <a href="/2022/12/13/Python%E5%8E%9F%E5%88%9B%E5%8A%9B/">
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
             
-              
-                <span>Python原创力</span>
-              
+              <a href="/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
             
-          </a>
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2022-12-28 14:58:09
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/eNSP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="eNSP学习笔记">
+                        <b>#</b> eNSP学习笔记
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记">
+                        #学习笔记
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/eNSP/" title="eNSP">
+                        #eNSP
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
-      </div>
+      
+    </div>
     
-      <div class="post-item" title="RHEL配置笔记">
-        <div class="time-m-d">2022-12-12</div>
-        <div class="title">
-          <a href="/2022/12/12/RHEL%E9%85%8D%E7%BD%AE%E7%AC%94%E8%AE%B0/">
-            
-              
-                <span>RHEL配置笔记</span>
-              
-            
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#BGP"><span class="toc-text">BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP-%E8%B7%AF%E7%94%B1%E9%BB%91%E6%B4%9E"><span class="toc-text">BGP 路由黑洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP%E8%B7%AF%E7%94%B1%E6%8E%A7%E5%88%B6-MED%E6%8E%A7%E5%88%B6"><span class="toc-text">BGP路由控制 MED控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP%E8%B7%AF%E7%94%B1%E6%8E%A7%E5%88%B6%EF%BC%88Local-Preference%E8%B7%AF%E5%BE%84%E9%80%89%E6%8B%A9%EF%BC%89"><span class="toc-text">BGP路由控制（Local Preference路径选择）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%A6%81"><span class="toc-text">简要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81"><span class="toc-text">进行实验验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP%E8%B7%AF%E7%94%B1%E5%8F%8D%E5%B0%84"><span class="toc-text">BGP路由反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP%E8%B7%AF%E7%94%B1%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD"><span class="toc-text">BGP路由综合实训</span></a></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="linux快捷键">
-        <div class="time-m-d">2022-12-10</div>
-        <div class="title">
-          <a href="/2022/12/10/linux%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-            
-              
-                <span>linux快捷键</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Linux笔记">
-        <div class="time-m-d">2022-12-10</div>
-        <div class="title">
-          <a href="/2022/12/10/Linux%E7%AC%94%E8%AE%B0/">
-            
-              
-                <span>Linux笔记</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="eNSP笔记">
-        <div class="time-m-d">2022-11-26</div>
-        <div class="title">
-          <a href="/2022/11/26/eNSP%E7%AC%94%E8%AE%B0/">
-            
-              
-                <span>eNSP笔记</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="eNSP华为模拟器——链路聚合">
-        <div class="time-m-d">2022-10-19</div>
-        <div class="title">
-          <a href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%94%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/">
-            
-              
-                <span>eNSP华为模拟器——链路聚合</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="分析羊了个羊（无限刷）">
-        <div class="time-m-d">2022-09-16</div>
-        <div class="title">
-          <a href="/2022/09/16/%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E5%88%86%E6%9E%90/">
-            
-              
-                <span>分析羊了个羊（无限刷）</span>
-              
-            
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="hexo博客文章">
-        <div class="time-m-d">2022-04-12</div>
-        <div class="title">
-          <a href="/2022/04/12/hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
-            
-              
-                <span>hexo博客文章</span>
-              
-            
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src="/plugins/valine.min.js" onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'Q7wVyjYPuqI74Po9PkIA7H7r-9Nh9j0Va',
+        appKey: 'Ez8qn5ou4x3tqLWTHjppUIpW',
+        placeholder: 'Welcome!😃😃😃 Please enter the correct email address!!!',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+
+
+
       </div>
     
   </div>
-  <nav class="post-navigation">
-    
-    <span class="page-num">1 / 2</span>
-    
-      <a href="/page/2/"><i class="iconfont icon-angleright"></i></a>
-    
-  </nav>
-</div>
 
 
         
@@ -560,6 +618,24 @@ daovoice('update');
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + eNSP%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94BGP + '&url=' + https%3A%2F%2Fttrrh.github.io%2F2022%2F12%2F28%2FeNSP%25E7%25AC%2594%25E8%25AE%25B0%25E2%2580%2594%25E2%2580%2594BGP%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://ttrrh.github.io/2022/12/28/eNSP%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94BGP/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>

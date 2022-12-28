@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>eNSP笔记——BGP</title>
+      <link href="/2022/12/28/eNSP%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94BGP/"/>
+      <url>/2022/12/28/eNSP%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94BGP/</url>
+      
+        <content type="html"><![CDATA[<h2 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h2><h3 id="BGP-路由黑洞"><a href="#BGP-路由黑洞" class="headerlink" title="BGP 路由黑洞"></a>BGP 路由黑洞</h3><h3 id="BGP路由控制-MED控制"><a href="#BGP路由控制-MED控制" class="headerlink" title="BGP路由控制 MED控制"></a>BGP路由控制 MED控制</h3><h3 id="BGP路由控制（Local-Preference路径选择）"><a href="#BGP路由控制（Local-Preference路径选择）" class="headerlink" title="BGP路由控制（Local Preference路径选择）"></a>BGP路由控制（Local Preference路径选择）</h3><h4 id="简要"><a href="#简要" class="headerlink" title="简要"></a>简要</h4><p>BGP路由器存在很多条去往同一个目标的BGP路由器时候，它会进行比较最后确定最优那条。</p><ol><li>首先会比较首选值（PrefVal）</li><li>再第一条相同的时候再比较本地优先级（Local Preference，简称：LocPrf），谁的LocPrf值高谁优先<ul><li>在LocPrf中，只在IBGP对等体进行通告。如果是EBGP对等体，那么传递过程就会不带有LocPrf。</li><li>默认情况下，你在使用network宣告或者import引入到BGP路由器时候的LocPrf值为空。在接收到LocPrf值是空的时候，它会使用100作为这条路由的LocPrf值（意思就是它会改变Local Preference值为100）；如果接收过来的LocPrf值不是空的，那么就不修改。</li><li>Local Preference（简称：LocPrf）他是一个32比特的整数，范围为：0~4294967295</li></ul></li></ol><h4 id="进行实验验证"><a href="#进行实验验证" class="headerlink" title="进行实验验证"></a>进行实验验证</h4><h3 id="BGP路由反射"><a href="#BGP路由反射" class="headerlink" title="BGP路由反射"></a>BGP路由反射</h3><h3 id="BGP路由综合实训"><a href="#BGP路由综合实训" class="headerlink" title="BGP路由综合实训"></a>BGP路由综合实训</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> eNSP学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> eNSP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网工之组网ip掩码分配</title>
       <link href="/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/"/>
       <url>/2022/12/23/%E7%BD%91%E5%B7%A5%E4%B9%8B%E7%BB%84%E7%BD%91ip%E6%8E%A9%E7%A0%81%E5%88%86%E9%85%8D/</url>
@@ -168,9 +195,9 @@
     
     
     <entry>
-      <title>eNSP华为模拟器</title>
-      <link href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
-      <url>/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8/</url>
+      <title>eNSP华为模拟器——链路聚合</title>
+      <link href="/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%94%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/"/>
+      <url>/2022/10/19/eNSP%E5%8D%8E%E4%B8%BA%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%94%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/</url>
       
         <content type="html"><![CDATA[<h1 id="eNSP（华为模拟器）"><a href="#eNSP（华为模拟器）" class="headerlink" title="eNSP（华为模拟器）"></a>eNSP（华为模拟器）</h1><h2 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h2><h3 id="manual"><a href="#manual" class="headerlink" title="manual"></a>manual</h3><blockquote><p>优点</p></blockquote><ul><li> 手工链路聚合，成员接口手工配置加入，没有LACP的参与。</li><li> 当需要在两个直连设备间提供一个较大的链路带宽而设备又不支持LACP协议时，可以使用手工模式。</li><li> 不同厂家之间无需担心协议报文协商问题。</li></ul><blockquote><p>缺点</p></blockquote><ul><li>当一条链路故障时，故障链路无法转发数据，链路聚合组自动在剩余的两条活动链路中分担流量。<br>手工模式Eth-Trunk可以完成多个物理接口聚合成一个Eth-Trunk口来提高带宽，同时能够检测到同一聚合组内的成员链路有断路等有限故障，<strong>但是无法检测到链路层故障、链路错连等故障</strong>。</li><li><ul><li> 单根纤芯发生故障时，可能出现收端正常的一方端口处于UP，而出现单通，所以这种情况一般要求端口匹配状态为自适应状态。<h3 id="LACP模式链路聚合"><a href="#LACP模式链路聚合" class="headerlink" title="LACP模式链路聚合"></a>LACP模式链路聚合</h3></li></ul></li></ul><blockquote><p>优点</p></blockquote><ul><li>提高Eth-Trunk的容错性，并且能提供备份功能，保证成员链路的高可靠性</li></ul><blockquote><p>缺点</p></blockquote><ul><li>不同厂家对接可能因为协议报文的处理机制等不同，产生对接异常。</li><li>而且一般来说：动态聚合要同端口匹配方式为强制相配套使用，因为：如果端口匹配方式为自适应，那么当物理链路质量不好时，可能端口状态频繁出现变化，相应的聚合组状态也会频繁出现up、down故障。</li></ul><blockquote><p><strong>不同厂家对接，建议设置聚合组为静态、端口设置为自适应方式</strong></p></blockquote><h3 id="max-active-linknumber"><a href="#max-active-linknumber" class="headerlink" title="max active-linknumber"></a>max active-linknumber</h3><ul><li>一般来说聚合的线路为三条就是选择<strong>max active-linknumber 2</strong>，这样即时有一条down了也可以即时补进去一条。还是为2条在工作</li></ul><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="创建脚注格式类似这样-RUNOOB"><a href="#创建脚注格式类似这样-RUNOOB" class="headerlink" title="创建脚注格式类似这样 ^RUNOOB"></a>创建脚注格式类似这样 <a href="56465">^RUNOOB</a></h2><h3 id="stp-edged-port-enable-amp-disable"><a href="#stp-edged-port-enable-amp-disable" class="headerlink" title="stp edged-port enable &amp; disable"></a>stp edged-port enable &amp; disable</h3><ul><li><p>stp edged-port enable 配置的接口不参与生成树计算，即可以转发BPDU也可以接收BPDU</p></li><li><p>:stp disable禁用STP/RSTP/MSTP功能，如果在链接客户端的接口上配置了此命令，这个接口禁用STP/RSTP/MSTP功能，即不参与生成树计算也不转发BPDU报文</p></li><li><p>定义：在 RSTP 里面，如果某一个指定端口位于整个网络的边缘，即不再与其他交换设备连接，而是直接与终端设备直连，这种端口叫做边缘端口。</p></li><li><p>特点</p></li></ul><ul><li>边缘端口的特性是端口up后可直接进入forwarding状态，而不需要等待转发延时，所以边缘端口连接的设备是终端设备，电脑，服务器等需要快速访问网络的设备。<ul><li>场景1：在连接服务器，DHCP客户端，防火墙，打印机，路由器等终端设备可以使用边缘端口</li><li>场景2：重要服务器，避免在网络发生拓扑变化时被阻塞，同时可以使其快速上线</li><li>场景3：可以用于连接DHCP客户端，使其客户端快速获得IP地址</li></ul><ul><li>场景4：在大型网络中，连接大量终端PC的交换机可以使用边缘端口，因为当PC开机时，连接PC的端口为DP会UP并进入转发状态，交换机会产生大量的TC BPDU，导致网络中的交换机频繁刷新自身的MAC地址表。</li></ul></li></ul><blockquote><p>一般来说开启stp enable为pc机接口上，应为它不需要参与生成树计算</p></blockquote><h3 id="Stp-cost-200000"><a href="#Stp-cost-200000" class="headerlink" title="Stp cost 200000"></a>Stp cost 200000</h3><ul><li>stp cost 是生成树协议在选举根端口和指定端口时需要使用的一个重要参数。开销越小被选举为根端口或指定端口的可能性就越大。stp cost 100000这么大的开销值，这个端口基本上就是出于逻辑阻塞状态了，除非交换机上其他端口上的物理线路都断开了，这个才有可能进入到转发状态。</li><li>说人话就是设置了这个他就是堵塞的，应为它的优先级很低，除非正常线路断开否则它不会启用。<h3 id="stp-bpdu-protection"><a href="#stp-bpdu-protection" class="headerlink" title="stp bpdu-protection"></a>stp bpdu-protection</h3></li><li>需要配置在BR根端口，使用命令<code>display stp brief </code>查看Root状态是哪个，哪个就是根端口。</li></ul><blockquote><p>root=根端口 alte=替代端口=alternative desi=指定端口=designation</p></blockquote><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><p>更新中….</p>]]></content>
       
