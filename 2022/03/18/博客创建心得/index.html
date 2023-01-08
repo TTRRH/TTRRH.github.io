@@ -83,6 +83,14 @@ daovoice('update');
     <div id="app">
       <div class="header">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <div class="aplayer" data-id="7340300768" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"
+        data-volume="0.35" ></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<script>
+
+
   <div class="avatar">
     <a href="/">
       <!-- 头像取消懒加载，添加no-lazy -->
@@ -93,7 +101,7 @@ daovoice('update');
     </a>
     
     <div class="nickname"><a href="/">𝙍𝙥𝙒𝙣</a></div>
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=7340300768&auto=1&height=32"></iframe>
+   
   </div>
   <div class="navbar">
     <ul>
@@ -232,42 +240,36 @@ daovoice('update');
       <div class="markdown-body">
         <p><em><strong>欢迎来到TTRR个人博客，本篇分享的是我对于hexo搭建并部署到github的个人心得分享。</strong></em></p>
 <h1 id="博客心得"><a href="#博客心得" class="headerlink" title="博客心得"></a>博客心得</h1><h3 id="第一步下载node-js"><a href="#第一步下载node-js" class="headerlink" title="第一步下载node.js"></a>第一步下载node.js</h3><p><strong>安装 <a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node.js</a></strong><br><strong>1、安装node.js的安装包根据自己搭建环境。（这边展示为windows）</strong></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/99tUR.png" height=80% width=80%>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/b519d4ed4f8563e28957c.png" height=80% width=80%>
 
-<ul>
-<li><p>2、安装目录推荐再C盘。（其实整个node.js占用也不大）</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/99ceQ.png" height=80% width=80%></li>
-<li><p>3、这里选择最后一个 <em><strong>Add to PATH</strong></em> 功能进行安装。<br> （因为接下来我们要用到这个PATH功能，这里不过多描述）</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/99bzX.png" height=80% width=80%></li>
-<li><p>4、接下来安装就直接一路选择 <em><strong>Next</strong></em> 直到安装结束。</p>
+<ol start="2">
+<li><p>安装目录推荐再C盘。（其实整个node.js占用也不大）<br><img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/4e8e418b506233c6854d8.png" height=80% width=80%>**/</p>
 </li>
-</ul>
+<li><p>这里选择最后一个 <em><strong>Add to PATH</strong></em> 功能进行安装。<br>（因为接下来我们要用到这个PATH功能，这里不过多描述）</p>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/68420ba2d77275166c1bb.png" height=80% width=80%></li>
+<li><p>接下来安装就直接一路选择 <em><strong>Next</strong></em> 直到安装结束。</p>
+</li>
+</ol>
 <h3 id="第二步下载Git"><a href="#第二步下载Git" class="headerlink" title="第二步下载Git"></a>第二步下载Git</h3><p><strong>安装蓝奏云版<a target="_blank" rel="noopener" href="https://www.lanzoui.com/i9s7tib">Git</a></strong><br><strong>官网直达下载<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></strong></p>
-<blockquote>
 <blockquote>
 <p>温馨提示：如果点击无法打开请安装一些步骤操作<br>Ⅰ. 将链接的<strong>lanzoui.com改成lanzous.com</strong><br>Ⅱ. 删除<strong>www</strong><br>你可以将Git安装再任意你喜欢的文件夹中（安装在哪都可以哦~）</p>
 </blockquote>
-</blockquote>
 <ul>
 <li>1、接着一路点击<strong>Next</strong>（也没什么要我们配置选择的）</li>
-<li>2、安装结束再桌面右击鼠标就可以看见Git<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/9JUeS.png" height=50% width=50%></li>
+<li>2、安装结束再桌面右击鼠标就可以看见Git<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/3909c8ad1ccee9db98408.png" height=50% width=50%></li>
 </ul>
 <h2 id="第三步配置环境"><a href="#第三步配置环境" class="headerlink" title="第三步配置环境"></a>第三步配置环境</h2><p> 安装结束我们在桌面右键鼠标点击<strong>Git Bash Here</strong>，会出来一个终端，我们执行以下的命令来检查</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
-<p>分别检查我们是否成功安装。（其实一般都不会出错不过以防万一）<br>成功例子展示：<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/9JA33.png" height=90% width=90%></p>
+<p>分别检查我们是否成功安装。（其实一般都不会出错不过以防万一）<br>成功例子展示：<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/178995222ddc57ba14468.png" height=90% width=90%></p>
 <h3 id="开始配置cnpm"><a href="#开始配置cnpm" class="headerlink" title="开始配置cnpm"></a>开始配置cnpm</h3><ul>
 <li><strong>安装cnpm，执行以下命令</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 <blockquote>
-<blockquote>
 <p><em>这个cnpm其实就是国内镜像为了就是让你访问变得更快</em></p>
-</blockquote>
 </blockquote>
 </li>
 <li><strong>检查cnpm安装</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm -v</span><br></pre></td></tr></table></figure>
 <blockquote>
-<blockquote>
 <p><em>只要出现版本号就代表你安装没有出错（出错再来一次）</em></p>
-</blockquote>
 </blockquote>
 </li>
 </ul>
@@ -276,9 +278,9 @@ daovoice('update');
 </ul>
 <h3 id="初始化我们的blog"><a href="#初始化我们的blog" class="headerlink" title="初始化我们的blog"></a>初始化我们的blog</h3><ul>
 <li><strong>需要你建立一个文件夹（名字随便取）</strong></li>
-<li>例如建立一个在<strong>F盘</strong>的<strong>blog</strong>文件夹，就在当前这个文件夹打开<strong>Git bash</strong><img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/9JD62.png" height=100% width=100%></li>
+<li>例如建立一个在<strong>F盘</strong>的<strong>blog</strong>文件夹，就在当前这个文件夹打开<strong>Git bash</strong><img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/e815605953cf614abb493.png " height=100% width=100%></li>
 </ul>
-<h5 id="小提示打开之后这里会显示出你当前的文件夹"><a href="#小提示打开之后这里会显示出你当前的文件夹" class="headerlink" title="小提示打开之后这里会显示出你当前的文件夹"></a>小提示打开之后这里会显示出你当前的文件夹</h5><img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/9J1Y0.png" height=100% width=100%>
+<h5 id="小提示打开之后这里会显示出你当前的文件夹"><a href="#小提示打开之后这里会显示出你当前的文件夹" class="headerlink" title="小提示打开之后这里会显示出你当前的文件夹"></a>小提示打开之后这里会显示出你当前的文件夹</h5><img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/2471023e72d9c201954cb.png" height=100% width=100%>
 
 <h3 id="克隆文件"><a href="#克隆文件" class="headerlink" title="克隆文件"></a>克隆文件</h3><ul>
 <li><strong>执行一下代码进行克隆（也可以叫初始化）</strong></li>
@@ -297,16 +299,14 @@ daovoice('update');
 </ul>
 <ul>
 <li><strong>等待命令执行结束就完成了我们的博客克隆，我们可以运行以下命令进行暂时预览</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/18/9L9xg.png" height=100% width=100%></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/2466230d4ae50a780a55d.png" height=100% width=100%></li>
 </ul>
-<blockquote>
 <blockquote>
 <p><em>注意事项：不可以使用<code>Ctrl + c</code>进行复制哦，请使用<code>Shift + ins</code>进行复制</em><br><u>（如果一直无法访问就使用<code>hexo server</code>命令进行预览）</u></p>
 </blockquote>
-</blockquote>
-<h4 id="这样子默认的主题就搭建完成啦"><a href="#这样子默认的主题就搭建完成啦" class="headerlink" title="这样子默认的主题就搭建完成啦~~"></a>这样子默认的主题就搭建完成啦~~</h4><img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/955D1.png" height="80%" width="80%">
+<h4 id="这样子默认的主题就搭建完成啦"><a href="#这样子默认的主题就搭建完成啦" class="headerlink" title="这样子默认的主题就搭建完成啦~~"></a>这样子默认的主题就搭建完成啦~~</h4><img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/e3b70a7c4d8e742c160b7.png" height="80%" width="80%">
 
-<h2 id="第四步选择中意的主题"><a href="#第四步选择中意的主题" class="headerlink" title="第四步选择中意的主题"></a>第四步选择中意的主题</h2><h3 id="hexo主题下载"><a href="#hexo主题下载" class="headerlink" title="hexo主题下载"></a>hexo<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题下载</a></h3><p> <strong>你可以在里面找到所有hexo主题，可以选择一个你自己喜欢的主题</strong></p>
+<h2 id="第四步选择中意的主题"><a href="#第四步选择中意的主题" class="headerlink" title="第四步选择中意的主题"></a>第四步选择中意的主题</h2><h3 id="hexo-主题下载"><a href="#hexo-主题下载" class="headerlink" title="hexo 主题下载"></a>hexo <a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题下载</a></h3><p> <strong>你可以在里面找到所有hexo主题，可以选择一个你自己喜欢的主题</strong></p>
 <p> <strong>可以看到的里面网页有很多主题</strong></p>
 <blockquote>
 <p>里面包含了以下三个东东</p>
@@ -321,11 +321,14 @@ daovoice('update');
 <p><em>小提示：大部分都是英文哦~ 可以使用google chrome 或者 edge 浏览器页面翻译</em></p>
 </blockquote>
 <ul>
-<li>首先我们点击主题的项目地址进入<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/95svP.png">
-（这里拿主题NEXT默认举例）
-我们可以看到 `Clone or download` 下有一个链接，我们先复制下来，等会克隆文件需要。
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/950Rq.png" height="90%" width="90%"></li>
+<li><p>首先我们点击主题的项目地址进入<br>（这里拿主题NEXT默认举例）</p>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/9fe2ba0f545c081ac2405.png" height="90%" width="90%">
+
+<p>我们可以看到 <code>Clone or download</code> 下有一个链接，我们先复制下来，等会克隆文件需要。</p>
+</li>
 </ul>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/39372f2f0465082eedf47.png" height="90%" width="90%">
+
 <h3 id="开始克隆主题"><a href="#开始克隆主题" class="headerlink" title="开始克隆主题"></a>开始克隆主题</h3><ul>
 <li>首先需要你在你的博客目录下打开我们的 <strong>Git bash</strong></li>
 </ul>
@@ -335,7 +338,7 @@ daovoice('update');
 <p><em>小提示：themes就是你博客的blog下的文件夹，至于主题名字其实你可以随便取，不过最好是英文，方便记忆</em></p>
 </blockquote>
 </blockquote>
-<p> 如果你一直无法通过<strong>Git bash克隆主题</strong> 你可以选择<code>Clone or download</code> 下的<code>Download ZIP</code><br> 下载完成后解压放到你的博客文件夹下的<strong>themes</strong>目录下就ok了<br> <img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/95mdi.png" height="80%" width="80%"></p>
+<p> 如果你一直无法通过<strong>Git bash克隆主题</strong> 你可以选择<code>Clone or download</code> 下的<code>Download ZIP</code><br> 下载完成后解压放到你的博客文件夹下的<strong>themes</strong>目录下就ok了<br> <img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/37a67a579a03fd06dc738.png" height="80%" width="80%"></p>
 <blockquote>
 <blockquote>
 <p><em>小提示：下载需要登录githu账号哦 ~ ~</em></p>
@@ -343,16 +346,17 @@ daovoice('update');
 </blockquote>
 <h3 id="开始配置主题"><a href="#开始配置主题" class="headerlink" title="开始配置主题"></a>开始配置主题</h3><ul>
 <li><p>在博客目录下有一个名字叫：<code>_config.yml</code> 的文件，我们将他打开</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/953E0.png" heigth="80%" width="80%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/321afec3c2cf66d92a7cc.png" heigth="80%" width="80%"></li>
 <li><p>然后滑到下面找到<code>theme</code>进行修改，修改成<strong>你刚刚下载的到博客目录下的themes下的主题文件夹名字</strong></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/95bCk.png" heigth="80%" width="80%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/f31f0f62e0b610250f310.png" heigth="80%" width="80%">
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/472b3d636b4196fb6982f.png" heigth="80%" width="80%"></li>
 <li><p>改好就可以暂时预览你刚刚下载的主题了，在你的博客目录下打开<code>Git bash</code> 执行以下命令</p>
 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行完你可以看到一个网址，切记不可以使用<code>ctrl + c</code>进行复制哦~ ~ </li>
-<li>我们可以选择那串链接用鼠标右键选择<code>copy</code>进行复制，使用<code>ctrl + c</code>会结束预览的哦<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/95jd3.png" heigth="80%" width="80%"></li>
+<li>我们可以选择那串链接用鼠标右键选择<code>copy</code>进行复制，使用<code>ctrl + c</code>会结束预览的哦</li>
 </ul>
 <blockquote>
 <p>有些主题你更换后无法预览，但是会提示你说，你需要安装什么什么。你就需要去安装哦，一般来说大部分都是pug和其他的插件。具体需要根据你的主题到底是需要哪个再去下载哦。总的来说，你预览的时候一般都会给你一个下载的链接，告诉你需要去安装这个，安装结束就可以暂时预览你的博客效果了，如果不懂的话可以评论，我看见会帮助你。</p>
@@ -364,15 +368,15 @@ daovoice('update');
 <li><p>博客根目录下的<code>_config.yml</code></p>
 </li>
 <li><p>主题themes下的<code>_config.yml</code><br>你要学会分清楚。</p>
-</li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/d2af74f8029b81cd0e89b.png" heigth="80%" width="80%"></li>
 <li><p>我们来看一下博客根目录下的<code>_config.yml</code>里面有啥东东</p>
 </li>
 <li><p>首先映入眼帘的就是以下这个东西，我已经贴心为英语不好的宝打了注释。</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/9WiFA.png" heigth="80%" width="80%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/b6d50691a0ffeec3598b0.png" heigth="80%" width="80%"></li>
 <li><p>再然后我们来看看主题themes下的<code>_config.yml</code>里面又有啥东东</p>
 </li>
 <li><p>首先打开第一眼看到的就是以下可能会出现的东西，里面就是主题详细配置以及注释（虽然可能是英文，但是你可以用翻译）</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/9WhPv.png" heigth="60%" width="60%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/80625784620cce32a8147.png" heigth="60%" width="60%"></li>
 </ul>
 <blockquote>
 <p>是不是感觉一下子就能区分这两个<code>_config.yml</code>（如果没有那就熟能生巧吧！）</p>
@@ -385,14 +389,12 @@ daovoice('update');
 <li><p>创建一个新文章</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;我的第一个博客&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>创建完每次生成的文章都固定在你的博客根目录下面的source/_posts下</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/9WlfW.png" heigth="80%" width="80%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/6a1489273fba2cce9f5a3.png" heigth="80%" width="80%"></li>
 </ul>
-<blockquote>
 <blockquote>
 <p>小提示：生成的 <code>.md</code> 文件就是你的博客，你可以在博客根目录下面的source/_posts下找到并打开编辑。<br>你打开之后不会弄咋办？？看完我博客——————有手就行。</p>
 </blockquote>
-</blockquote>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/21/9WITT.png" height="70%" width="70%">
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/29c26072c4032bc99648d.png" height="50%" width="50%">
 
 <h2 id="部署与发布"><a href="#部署与发布" class="headerlink" title="部署与发布"></a>部署与发布</h2><h3 id="生成博客文章"><a href="#生成博客文章" class="headerlink" title="生成博客文章"></a>生成博客文章</h3><ul>
 <li>我们生成的博客的文章 <code>.md</code> 文件，稍微百度一下发现这个是 <strong>Markdown</strong> 那就去<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>学习一下<strong>Markdown</strong><br>稍微学习一下就可以轻松发布博客了。<blockquote>
@@ -410,9 +412,9 @@ daovoice('update');
 </blockquote>
 </li>
 <li><p>新建一个仓库</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9MK61.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/ef827a474bad9aa58d3df.png" height="90%" width="90%"></li>
 <li><p>仓库名必须是 <code>用户名 + .github.io </code></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9MZPA.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/d7cc765d397e0436a3c93.png" height="90%" width="90%"></li>
 </ul>
 <h3 id="创建git密钥"><a href="#创建git密钥" class="headerlink" title="创建git密钥"></a>创建git密钥</h3><ul>
 <li><p>接下来我们需要创建<code>Git</code>密钥,打开git bash（不要求在哪个目录),执行以下命令：</p>
@@ -424,9 +426,10 @@ daovoice('update');
 <li><p>再执行以下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>会输出你密钥，你需要复制下来。<br>生成的地址在 <code>.shh</code> 中的 <code>id_rsa.pub</code> 中：</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9MMMi.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/db320e3a13fc0c66b41ff.png" height="90%" width="90%">
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/f474e92f6e26d4b5aed8a.png" height="90%" width="90%"></li>
 <li><p>回到我们的github点击我们的头像进入，再点击左边 <code>Settings--SSH</code> 和右边 <code>New SSH Key</code></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9MSXv.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/318a08558a27f8a9cd774.png" height="90%" width="90%"></li>
 </ul>
 <p><code>title</code> 随便取都可以，<code>key</code> 把你的密钥粘贴进去  然后点击<code>Add SSH key</code> 即可</p>
 <blockquote>
@@ -443,7 +446,7 @@ daovoice('update');
 </blockquote>
 </li>
 <li><p>打开我们的创建好的项目选择<code>ssh</code> 并复制下来等会会使用到</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9Nuhd.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/e11d6b875a3e3e58d8100.png" height="90%" width="90%"></li>
 <li><p>打开我们博客根目录的<code>_config.yml</code> 滑倒最底下就可以看到以下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 你复制的地址</span><br><span class="line">  branch: mian</span><br></pre></td></tr></table></figure></li>
 <li><p>接下来我们再我们博客根目录下来执行以下命令：</p>
@@ -451,21 +454,20 @@ daovoice('update');
 <p>然后执行以下命令安装上传插件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>一般安装上传插件都不会报错<code>Error</code>,要是你报错了，再次执行即可，如果你反反复复都无法安装 或者一直报错就在加我QQ我会帮助你</p>
+<p>一般安装上传插件都不会报错<code>Error</code>,要是你报错了，再次执行即可，如果你反反复复都无法安装 或者一直报错就在加我TG群组，找我帮助你</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h3><ul>
-<li>完成以上所有步骤后进行最后的部署上传，执行以下命令：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9NUPk.png" height="90%" width="90%"></li>
+<li>完成以上所有步骤后进行最后的部署上传，执行以下命令：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><h3 id="生成博客链接"><a href="#生成博客链接" class="headerlink" title="生成博客链接"></a>生成博客链接</h3><ul>
 <li><p>打开我们的博客项目点击<code>Settings</code></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9NyTQ.png" height="90%" width="90%"></li>
+</li>
 <li><p>往下滑找到<code>Github pages</code></p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9NGM3.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/36cd39d43fff9726ed555.png" height="90%" width="90%"></li>
 <li><p>选择分支为<code>main</code> 然后保存</p>
-<img src="/images/loading.gif" data-original="https://s1.328888.xyz/2022/03/24/9N9f4.png" height="90%" width="90%"></li>
+<img src="/images/loading.gif" data-original="https://rpwn-img.pages.dev/file/597e4513f6ff769564cf9.png" height="90%" width="90%"></li>
 </ul>
 <h2 id="最后我们就能得到我们的博客链接啦！！"><a href="#最后我们就能得到我们的博客链接啦！！" class="headerlink" title="最后我们就能得到我们的博客链接啦！！"></a>最后我们就能得到我们的博客链接啦！！</h2><p>有什么不懂的可以评论哦~</p>
 <hr>
@@ -541,7 +543,7 @@ daovoice('update');
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97"><span class="toc-text">博客心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E4%B8%8B%E8%BD%BDnode-js"><span class="toc-text">第一步下载node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E4%B8%8B%E8%BD%BDGit"><span class="toc-text">第二步下载Git</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-text">第三步配置环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEcnpm"><span class="toc-text">开始配置cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">开始安装hexo并初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%88%91%E4%BB%AC%E7%9A%84blog"><span class="toc-text">初始化我们的blog</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%8F%E6%8F%90%E7%A4%BA%E6%89%93%E5%BC%80%E4%B9%8B%E5%90%8E%E8%BF%99%E9%87%8C%E4%BC%9A%E6%98%BE%E7%A4%BA%E5%87%BA%E4%BD%A0%E5%BD%93%E5%89%8D%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">小提示打开之后这里会显示出你当前的文件夹</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E6%96%87%E4%BB%B6"><span class="toc-text">克隆文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%99%E6%A0%B7%E5%AD%90%E9%BB%98%E8%AE%A4%E7%9A%84%E4%B8%BB%E9%A2%98%E5%B0%B1%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%88%90%E5%95%A6"><span class="toc-text">这样子默认的主题就搭建完成啦~~</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%80%89%E6%8B%A9%E4%B8%AD%E6%84%8F%E7%9A%84%E4%B8%BB%E9%A2%98"><span class="toc-text">第四步选择中意的主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD"><span class="toc-text">hexo主题下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%85%8B%E9%9A%86%E4%B8%BB%E9%A2%98"><span class="toc-text">开始克隆主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-text">开始配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="toc-text">开始修改主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%91%E5%B8%83"><span class="toc-text">部署与发布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="toc-text">生成博客文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8github%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="toc-text">使用github部署博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAgit%E5%AF%86%E9%92%A5"><span class="toc-text">创建git密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5git%E5%87%86%E5%A4%87%E9%83%A8%E7%BD%B2"><span class="toc-text">链接git准备部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="toc-text">部署博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgithub"><span class="toc-text">配置github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E9%93%BE%E6%8E%A5"><span class="toc-text">生成博客链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E6%88%91%E4%BB%AC%E5%B0%B1%E8%83%BD%E5%BE%97%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%93%BE%E6%8E%A5%E5%95%A6%EF%BC%81%EF%BC%81"><span class="toc-text">最后我们就能得到我们的博客链接啦！！</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97"><span class="toc-text">博客心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E4%B8%8B%E8%BD%BDnode-js"><span class="toc-text">第一步下载node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E4%B8%8B%E8%BD%BDGit"><span class="toc-text">第二步下载Git</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-text">第三步配置环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEcnpm"><span class="toc-text">开始配置cnpm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">开始安装hexo并初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%88%91%E4%BB%AC%E7%9A%84blog"><span class="toc-text">初始化我们的blog</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%8F%E6%8F%90%E7%A4%BA%E6%89%93%E5%BC%80%E4%B9%8B%E5%90%8E%E8%BF%99%E9%87%8C%E4%BC%9A%E6%98%BE%E7%A4%BA%E5%87%BA%E4%BD%A0%E5%BD%93%E5%89%8D%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">小提示打开之后这里会显示出你当前的文件夹</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E6%96%87%E4%BB%B6"><span class="toc-text">克隆文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%99%E6%A0%B7%E5%AD%90%E9%BB%98%E8%AE%A4%E7%9A%84%E4%B8%BB%E9%A2%98%E5%B0%B1%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%88%90%E5%95%A6"><span class="toc-text">这样子默认的主题就搭建完成啦~~</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E9%80%89%E6%8B%A9%E4%B8%AD%E6%84%8F%E7%9A%84%E4%B8%BB%E9%A2%98"><span class="toc-text">第四步选择中意的主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD"><span class="toc-text">hexo 主题下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%85%8B%E9%9A%86%E4%B8%BB%E9%A2%98"><span class="toc-text">开始克隆主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-text">开始配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="toc-text">开始修改主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%91%E5%B8%83"><span class="toc-text">部署与发布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><span class="toc-text">生成博客文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8github%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="toc-text">使用github部署博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAgit%E5%AF%86%E9%92%A5"><span class="toc-text">创建git密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5git%E5%87%86%E5%A4%87%E9%83%A8%E7%BD%B2"><span class="toc-text">链接git准备部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="toc-text">部署博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgithub"><span class="toc-text">配置github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E9%93%BE%E6%8E%A5"><span class="toc-text">生成博客链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E6%88%91%E4%BB%AC%E5%B0%B1%E8%83%BD%E5%BE%97%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%93%BE%E6%8E%A5%E5%95%A6%EF%BC%81%EF%BC%81"><span class="toc-text">最后我们就能得到我们的博客链接啦！！</span></a></li></ol></li></ol>
       
     </div>
   </div>
